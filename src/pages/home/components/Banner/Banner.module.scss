@@ -1,0 +1,65 @@
+@use "@/scss/utils" as *;
+
+.banner {
+    @include adaptiveValue(padding, 135, 15);
+    @include nest-to-avoid-collision {
+        padding-top: 0;
+        padding-bottom: toRem(70);
+    }
+    &-container {
+        max-width: toRem($containerWidth);
+        max-height: toRem(500);
+        margin: 0 auto;
+        background: $btnColor3;
+        display: flex;
+        justify-content: space-between;
+    }
+    &-content {
+        padding: toRem(69) 0 toRem(69) toRem(56);
+    }
+    &-title {
+        color: $textColor1;
+        margin-bottom: toRem(32);
+    }
+    &-subtitle {
+        color: $btnColor1;
+        margin-bottom: toRem(32);
+    }
+    .timer-wrapper {
+        margin-bottom: toRem(40);
+    }
+    &-button {
+        background: $btnColor1;
+        &:hover {
+            background: $btnColorHover1;
+        }
+    }
+
+    .image {
+        aspect-ratio: 568 / 330;
+        max-width: toRem(568);
+        position: relative;
+        z-index: 2;
+        
+        &-container {
+            width: 100%;
+            max-width: toRem(600);
+            padding: toRem(37) toRem(44) toRem(43) 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        &-decor {
+            position: absolute;
+            top: 0;
+            right: toRem(114);
+            height: toRem(500);
+            width: toRem(500);
+            border-radius: 50%;
+            background: rgba($color: #D9D9D9, $alpha: 0.5);
+            filter: blur(200px);
+            z-index: 1;
+        }
+    }
+}

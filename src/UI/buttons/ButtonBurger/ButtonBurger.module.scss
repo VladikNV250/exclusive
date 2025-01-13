@@ -1,0 +1,47 @@
+@use "@/scss/utils" as *;
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    z-index: 8;
+    @media (min-width: toRem(1000)) {
+        display: none;
+    }
+}
+
+.line {
+    width: toRem(30);   
+    height: 0;
+    border-bottom: toRem(2) solid $btnColor3;
+    position: absolute;
+    left: 0;
+    // background: $btnColor3   
+    transition-property: top, transform, color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 600ms;
+    transform: scaleX(1);
+}
+
+.burger {
+    width: toRem(30);
+    height: toRem(26);
+    position: relative;
+    .line {
+        &:nth-child(1) { top: 0%;  }
+        &:nth-child(2) { top: 50%; transform: translate(0, -50%); }
+        &:nth-child(3) { top: 50%; transform: translate(0, -50%); }
+        &:nth-child(4) { top: 100%; transform: translate(0, -100%); }
+    }
+    &__open {
+        @extend .burger;
+        position: fixed;
+        .line {
+            &:nth-child(1) { top: 50%; transform: scaleX(0) translate(0, -50%); }
+            &:nth-child(2) { top: 50%; transform: translate(0, -50%) rotate(45deg); }
+            &:nth-child(3) { top: 50%; transform: translate(0, -50%) rotate(-45deg); }
+            &:nth-child(4) { top: 50%; transform: scaleX(0) translate(0, -50%); }
+        }
+    }
+}

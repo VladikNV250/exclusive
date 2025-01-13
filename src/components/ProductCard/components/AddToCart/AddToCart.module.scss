@@ -1,0 +1,26 @@
+@use "@/scss/utils" as *;
+
+.item {
+    &-button {
+        grid-area: button;
+        width: 100%;
+        height: 100%;
+        background: $btnColor3;
+        color: $textColor1;
+        font-size: toRem(16);
+        font-weight: 500;
+        line-height: 1.5; /* 24/16 */
+
+        &:disabled {
+            background: tone($btnColor3, 5, up);
+        }
+    }
+    &-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+}
+    

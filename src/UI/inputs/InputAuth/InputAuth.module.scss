@@ -1,0 +1,14 @@
+@use "@/scss/utils" as *;
+
+.input-auth {
+    width: 100%;
+    padding-bottom: toRem(8);
+    border-bottom: toRem(1) solid rgba($color: $textColor3, $alpha: 0.7);
+    font-size: toRem(16);
+    font-weight: 400;
+    color: $textColor3;
+    line-height: 1.5; /* 24/16 */
+    &::placeholder {
+        color: rgba($color: $textColor3, $alpha: 0.5);
+    }
+}

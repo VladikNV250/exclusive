@@ -1,0 +1,43 @@
+@use "@/scss/utils" as *;
+
+.message {
+    max-width: toRem(320);
+    padding: toRem(16) toRem(24);
+    border: toRem(1) solid $secondaryColor3;
+    border-radius: toRem(4);
+    outline: toRem(2) solid $primaryColor1;
+    background: $primaryColor1;    
+    font-size: toRem(16);
+    position: fixed;
+    top: toRem(64);
+    right: toRem(64);
+    z-index: 10;
+    animation: slideDown 400ms ease-in-out;
+    @include smoothAnimation();
+
+    &-info {
+        @extend .message;
+        color: $textColor3;
+    }
+    &-error {
+        @extend .message;
+        color: #e37575;
+    }
+    &-success {
+        @extend .message;
+        color: $secondaryColor3;
+    }
+
+    * { display: inline-block; }
+    *:not(:last-child) { margin-right: toRem(20); }
+}
+
+@keyframes slideDown { 
+    from { 
+        transform: translateY(-100%); 
+        opacity: 0; 
+    } to { 
+        transform: translateY(0);
+        opacity: 1; 
+    } 
+}

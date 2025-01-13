@@ -1,0 +1,46 @@
+@use "@/scss/utils" as *;
+
+.checkbox {
+    &-container {
+        display: inline-block;
+        position: relative;
+        padding-left: toRem(30);
+        margin-top: toRem(2);
+        cursor: pointer;
+        user-select: none;
+    }
+
+    &-input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+    &-custom {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: transparent;
+        border: toRem(1) solid $secondaryColor3;
+        border-radius: toRem(4);
+        @include smoothAnimation();
+
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            top: toRem(4);
+            left: toRem(8);
+            width: toRem(4);
+            height: toRem(8);
+            border: solid transparent;
+            border-width: 0 toRem(2) toRem(2) 0;
+            transform: rotate(45deg);
+            @include smoothAnimation();
+        }
+    }
+
+    &-input:checked ~ &-custom { background-color: $secondaryColor3; }
+    &-input:checked ~ &-custom::after { border-color: $textColor1; }
+}

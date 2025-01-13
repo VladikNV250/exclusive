@@ -1,0 +1,37 @@
+@use "@/scss/utils" as *;
+
+.icons-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+    > * {
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+    }
+}
+
+.heart:hover,
+.trash:hover { color: #f91616; }
+
+.heart {
+    width: toRem(24);
+    height: toRem(24);
+    @include smoothAnimation();
+
+    &__removed {
+        transform: scale(0);
+        @include smoothAnimation();
+    }
+}
+
+.trash {
+    width: toRem(24);
+    height: toRem(24);
+    @include smoothAnimation();
+
+    &__removed {
+        transform: scale(0);
+        @include smoothAnimation();
+    }
+}

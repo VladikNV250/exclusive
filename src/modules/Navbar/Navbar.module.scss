@@ -1,0 +1,84 @@
+@use "@/scss/utils" as *;
+
+.navbar {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: toRem(0.5) solid rgba($color: $textColor3, $alpha: 0.3);
+    @include adaptiveValue(padding, 135, 15);
+    @include nest-to-avoid-collision {
+        padding-top: toRem(40);
+        padding-bottom: toRem(16);
+    }
+
+    &-container {
+        max-width: toRem(1170);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 0 auto
+    }
+    &-content {
+        display: none;
+
+        @media (min-width: toRem($tabletScreenWidth)) {
+            height: 100%;
+            display: flex;
+            align-items: center;    
+        }
+    }
+}
+
+.links-container {
+    display: none;
+    @include adaptiveValue(gap, 48, 16, $maxScreenWidth, $tabletScreenWidth);
+    @media (min-width: toRem(1000)) {
+        display: flex;
+        align-items: center;
+    }
+
+    .link__current {
+        &::after {
+            width: 100% ;
+        }
+    }
+}
+
+.icon-link {
+    display: flex;
+    align-items: center;
+    position: relative;
+    @include smoothAnimation();
+    &__heart {
+        @extend .icon-link;
+        margin-left: toRem(24);
+        &:hover {
+            color: $secondaryColor3;
+        }
+    }
+    &__cart {
+        @extend .icon-link;
+        margin-left: toRem(16);
+        &:hover {
+            color: #44a5d9;
+        }
+    }
+}
+
+.counter {
+    width: toRem(16);
+    height: toRem(16);
+    background: $secondaryColor3;
+    color: $textColor1;
+    font-size: toRem(12);
+    font-weight: 400;
+    line-height: 1.5; /* 18/12 */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+}

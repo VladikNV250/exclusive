@@ -1,0 +1,16 @@
+@use "@/scss/utils" as *;
+
+.info-box {
+    border-radius: toRem(4);
+    padding: toRem(13) toRem(16);
+    font-size: toRem(16);
+    line-height: 1.5; /* 24/16 */
+    color: $textColor3;
+    background: $secondaryColor1;
+    resize: none;
+    min-height: toRem(207);
+    box-sizing: border-box;
+    &::placeholder {
+        color: rgba($color: $textColor3, $alpha: 0.5);
+    }
+}

@@ -1,0 +1,11 @@
+@use "@/scss/utils" as *;
+
+.price {
+    font-family: "Inter";
+    font-size: toRem(24);
+    font-weight: 400;
+    color: $textColor3;
+    line-height: 1; /* 24/24 */
+    letter-spacing: 0.03em;
+    margin-bottom: toRem(24);
+}

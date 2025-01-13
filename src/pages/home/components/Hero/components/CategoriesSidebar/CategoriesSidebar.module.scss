@@ -1,0 +1,66 @@
+@use "@/scss/utils" as *;
+
+.categories-sidebar {
+    .sidebar {
+        &-list {
+            width: toRem(217);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: toRem(16);
+            padding-top: toRem(40);
+            padding-right: toRem(16);
+            border-right: toRem(0.5) solid rgba($color: $textColor3, $alpha: 0.3);
+        }
+        &-item,
+        &-item__category {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            &__category:hover > .subcategory-list {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+        &-link {
+            font-size: toRem(16);
+            font-weight: 400;
+            line-height: 1.5; /* 24/16 */
+            color: $textColor3;
+            @include smoothAnimation();
+            &:hover { color: tone($textColor3, 3); }
+        }
+        &-icon {
+            transform: rotate(-90deg);
+        }
+    }
+    .subcategory {
+        &-list {
+            position: absolute;
+            z-index: 5;
+            top: 0;
+            left: calc(100%);
+            padding-left: toRem(12);
+            visibility: hidden;
+            opacity: 0;
+            @include smoothAnimation();
+        }
+        &-item {
+            background: tone($primaryColor1, 0.5, down);
+            padding: toRem(8) toRem(24);
+            &:first-child { 
+                padding-top: toRem(16);
+                border-radius: toRem(4) toRem(4) 0 0; 
+            }
+            &:last-child { 
+                padding-bottom: toRem(16);
+                border-radius: 0 0 toRem(4) toRem(4); 
+            }
+        }
+        &-link {
+            @extend .sidebar-link;
+        }
+    }
+}

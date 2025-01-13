@@ -1,0 +1,18 @@
+@use "@/scss/utils" as *;
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: toRem(16) 0;
+    font-size: toRem(16);
+    font-weight: 400;
+    color: $textColor3;
+    line-height: 1.5; /* 24/16 */
+    &:not(:last-child) {
+        border-bottom: toRem(1) solid rgba($color: #000, $alpha: 0.4);
+    }
+    &:first-child { padding-top: 0; }
+    &:last-child { padding-bottom: 0; }
+}

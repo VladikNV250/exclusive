@@ -1,0 +1,50 @@
+@use "@/scss/utils" as *;
+
+$radius: 40;
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .icon {
+        &-container {
+            margin-bottom: toRem(24);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            place-items: center;
+            > * {
+                grid-column: 1 / -1;
+                grid-row: 1 / -1;
+            }
+        }
+        &-circle {
+            &__outer {
+                width: toRem($radius * 2);
+                height: toRem($radius * 2);
+                border-radius: 50%;
+                background: #2F2E30;
+                opacity: 0.3;
+            }
+            &__inner { 
+                width: toRem(($radius - 11) * 2);
+                height: toRem(($radius - 11) * 2);
+                border-radius: 50%;
+                background: $btnColor3;
+            }
+        }
+        &-item { color: $primaryColor1; z-index: 1; }
+    }
+    .title {
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: toRem(8);
+    }
+    .subtitle {
+        font-size: toRem(14);
+        font-weight: 400;
+        line-height: 1.5; /* 21/14 */
+        text-align: center;
+    }
+}

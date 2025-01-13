@@ -1,0 +1,33 @@
+@use "@/scss/utils" as *;
+
+.input-search--container {
+    position: relative;
+    display: inline-block;
+
+    .input-search {
+        width: toRem(243);
+        height: toRem(38);
+        background: $secondaryColor1;
+        border-radius: toRem(4);
+        padding: toRem(7) toRem(12 + 24) toRem(7) toRem(20); // + 24 --- icon
+        box-sizing: border-box;
+        color: $textColor3;
+        font-size: toRem(12); 
+        font-weight: 400;
+        line-height: 1.5; /* 18/12 */
+    
+        &::placeholder {
+            color: $textColor3;
+            opacity: 0.5;
+        }
+    }
+
+    .icon {
+        position: absolute;
+        top: 50%;
+        right: toRem(12);
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+}
+

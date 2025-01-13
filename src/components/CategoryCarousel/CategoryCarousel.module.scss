@@ -1,0 +1,11 @@
+@use "@/scss/utils" as *;
+
+.category {
+    &-carousel {
+        display: flex;
+        gap: toRem(30);
+    }
+    &-link {
+        width: 100%;
+    }   
+}

@@ -1,0 +1,40 @@
+@use "@/scss/utils" as *;
+
+.new-arrival {
+    @include adaptiveValue(padding, 135, 15);
+    @include nest-to-avoid-collision {
+        padding-top: 0;
+        padding-bottom: toRem(140);
+    }
+    &--container {
+        max-width: toRem($containerWidth);
+        margin: 0 auto;
+    }
+    &--content {
+        height: toRem(600);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, toRem(284)); // temporarily
+        column-gap: toRem(30);
+        row-gap: toRem(32);
+        margin-top: toRem(60);
+    }
+    
+    .image {
+        &-biggy {
+            top: auto;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &-widely {
+            left: auto;
+            right: 0;
+        }
+        &-square {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@use "@/scss/utils" as *;
+
+.roadmap {
+    @include adaptiveValue(padding, 135, 15);
+    @include nest-to-avoid-collision {
+        padding-top: toRem(80);
+        padding-bottom: 0;
+    }
+    &-container {
+        max-width: toRem($containerWidth);
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    
+    &-separator {
+        display: inline-block;
+        font-size: toRem(14);
+        font-weight: 400;
+        color: rgba($color: $textColor3, $alpha: 0.5);
+        line-height: 1.5; /* 21/14 */
+        margin: 0 toRem(12);
+    }
+}

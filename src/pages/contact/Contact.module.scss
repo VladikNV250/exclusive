@@ -1,0 +1,18 @@
+@use "@/scss/utils" as *;
+
+.contact {
+    &-section {
+        @include adaptiveValue(padding, 135, 15);
+        @include nest-to-avoid-collision {
+            padding-top: toRem(80);
+            padding-bottom: toRem(140);
+        }
+    }
+    &-container {
+        margin: 0 auto;
+        max-width: toRem($containerWidth);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

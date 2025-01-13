@@ -1,0 +1,40 @@
+@use "@/scss/utils" as *;
+
+.input {
+    &-container {
+        display: inline-block;
+        position: relative;
+    }
+
+    &-quantity {
+        width: toRem(75);
+        height: toRem(47);
+        background: transparent;
+        border: toRem(1.5) solid rgba($color: $btnColor3, $alpha: 0.4);
+        border-radius: toRem(4);
+        box-sizing: border-box;
+        padding: toRem(10) toRem(12);
+        padding-right: toRem(12 + 16); // 16 --- spin-buttons
+        font-size: toRem(16);
+        font-weight: 400;
+        color: $textColor3;
+        line-height: 1.5; /* 24/16 */
+    }
+}
+
+.spin-buttons--container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: toRem(12);
+    display: flex;
+    flex-direction: column;
+
+    .increment,
+    .decrement {
+        color: $textColor3;
+    }
+
+    .increment { transform: rotate(180deg); }
+    .decrement { transform: rotate(0deg); }
+}

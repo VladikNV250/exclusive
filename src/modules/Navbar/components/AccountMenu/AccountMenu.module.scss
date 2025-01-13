@@ -1,0 +1,81 @@
+@use "@/scss/utils" as *;
+
+.account {
+    &-button {
+        height: toRem(32);
+        width: toRem(32);
+        border-radius: 50%;
+        background: transparent;
+        @include smoothAnimation();
+
+        &:hover {
+            background: $secondaryColor3;
+            .account-icon { 
+                width: toRem(21.4); 
+                color: $textColor1; 
+            }
+        }
+        &__opened {
+            @extend .account-button;
+            background: $secondaryColor3;
+            .account-icon { 
+                width: toRem(21.4); 
+                color: $textColor1; 
+            }
+        }
+    }
+    &-icon {
+        width: toRem(32);
+        height: toRem(32);
+        color: $textColor3;
+        @include smoothAnimation();
+    }
+
+    &-menu {
+        height: toRem(32);
+        margin-left: toRem(16);
+        position: relative;
+    }
+
+    &-dropdown {
+        display: flex;
+        flex-direction: column;
+        gap: toRem(13);
+        width: toRem(225);
+        padding: toRem(16) toRem(10);
+        border-radius: toRem(4);
+        box-sizing: border-box;
+        background: rgba($color: #000000, $alpha: 0.04);
+        backdrop-filter: blur(150px);
+        z-index: 5;
+        position: absolute;
+        top: calc(100% + 3px);
+        right: 0;
+    }
+
+    &-item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: toRem(16);
+        @include smoothAnimation();
+
+        .account-icon { color: $secondaryColor3; }
+
+        &:hover {
+            .account-icon { color: tone($secondaryColor3, 2, up); }
+            .account-text { color: tone($secondaryColor3, 2, up); }
+        }
+    }
+    &-text {
+        max-width: toRem(150);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: toRem(14);
+        font-weight: 400;
+        color: $secondaryColor3;
+        line-height: 1.5; /* 21/14 */
+        @include smoothAnimation();
+    }
+}

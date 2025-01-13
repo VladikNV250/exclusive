@@ -1,0 +1,18 @@
+@use "@/scss/utils" as *;
+
+.colors {
+    &-container {
+        display: flex;
+        align-items: center;
+        gap: toRem(24);
+        margin-bottom: toRem(24);
+    }
+    &-title {
+        font-family: "Inter";
+        font-size: toRem(20);
+        font-weight: 400;
+        color: $textColor3;
+        line-height: 1; /* 20/20 */
+        letter-spacing: 0.03em;
+    }
+}

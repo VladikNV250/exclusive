@@ -1,0 +1,8 @@
+@use "@/scss/utils" as *;
+
+.footer-text {
+    font-size: toRem(16);
+    font-weight: 400;
+    color: $textColor1;
+    line-height: 1.5; /* 24/16 */
+}

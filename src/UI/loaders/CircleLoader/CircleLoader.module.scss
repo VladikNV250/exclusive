@@ -1,0 +1,17 @@
+@use "@/scss/utils" as *;
+
+.loader {
+    width: toRem(40);
+    height: toRem(40);
+    background: transparent;
+    border-radius: 50%;
+    border: toRem(6) solid rgba($color: #000000, $alpha: 0.5);
+    border-top: toRem(6) solid $secondaryColor3;
+    box-sizing: content-box;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

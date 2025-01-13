@@ -1,0 +1,28 @@
+@use "@/scss/utils" as *;
+
+.category {
+    &-section {
+        @include adaptiveValue(padding, 135, 15);
+        @include nest-to-avoid-collision {
+            padding-top: toRem(80);
+            padding-bottom: 0;
+        }
+    }
+    &-container {
+        max-width: toRem($containerWidth);
+        margin: 0 auto;
+        padding-bottom: toRem(70);
+        border-bottom: toRem(0.5) solid rgba($color: $btnColor3, $alpha: 0.3);
+    }
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: toRem(60);
+
+    .button-container {
+        *:not(:last-child) { margin-right: toRem(8); }
+    }
+}

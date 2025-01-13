@@ -1,0 +1,35 @@
+@use "@/scss/utils" as *;
+
+.select {
+    position: relative;
+    user-select: none;
+
+    &-trigger {
+        font-size: toRem(14);
+        font-weight: 400;
+        color: $textColor1;
+        line-height: 1.5; /* 21/14 */
+        display: flex;
+        align-items: center;
+        gap: toRem(5);
+    }
+    &-options {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: $primaryColor2;
+    }
+    &-option {
+        position: relative;
+        z-index: 14;
+        padding: toRem(4) toRem(6);
+        font-size: toRem(14);
+        font-weight: 400;
+        color: $textColor1;
+        line-height: 1.5; /* 21/14 */
+        @include smoothAnimation(100ms);
+        &:hover {
+            background: tone($primaryColor2, 1, up);
+        }
+    }
+}

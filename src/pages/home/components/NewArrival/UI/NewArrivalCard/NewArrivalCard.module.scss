@@ -1,0 +1,52 @@
+@use "@/scss/utils" as *;
+
+.item {
+    background: $btnColor3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: toRem(24);
+    gap: toRem(16);
+    position: relative;
+    border-radius: toRem(4);
+    overflow: hidden;
+
+    img { 
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &-blur {
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #D9D9D9, $alpha: 0.9);
+        filter: blur(200px);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &-title {
+        color: $textColor1;     
+        z-index: 2;   
+    }
+    &-subtitle {
+        max-width: toRem(255);
+        font-size: toRem(14);
+        font-weight: 400;
+        color: $textColor1;
+        line-height: 1.5; /* 21/14 */
+        z-index: 2;
+    }
+    & > &-link {
+        z-index: 2;
+        font-weight: 500;
+        color: $textColor1; 
+        &::after {
+            background: rgba($color: $textColor1, $alpha: 0.5);
+        }       
+    }
+}

@@ -1,0 +1,25 @@
+@use "@/scss/utils" as *;
+
+.radio-container {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    gap: toRem(8);
+
+    .color-radio {
+        width: toRem(20);
+        height: toRem(20);
+        border-radius: 50%;
+        background: $secondaryColor3;
+        position: relative;
+        z-index: 0;
+        cursor: pointer;
+        &:checked {
+            width: toRem(16);
+            height: toRem(16);
+            margin: toRem(2);
+            border: toRem(2) solid white;
+            outline: toRem(2) solid black;
+        }
+    }
+}

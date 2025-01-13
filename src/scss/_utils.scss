@@ -1,0 +1,73 @@
+@use "sass:color";
+// COLORS
+$primaryColor1: #fff;
+$primaryColor2: #363738;
+$secondaryColor1: #F5F5F5;
+$secondaryColor2: #FEFAF1;
+$secondaryColor3: #DB4444;
+$btnColor1: #00FF66;
+$btnColor2: $secondaryColor3 ;
+$btnColorHover1: #A0BCE0;
+$btnColorHover2: #E07575;
+$textColor1: #FAFAFA;
+$textColor2: #7D8184;
+$textColor3: #000000;
+$btnColor3: $textColor3;
+$background: #fff;
+$inputBackground: #EFF0F6;
+
+$containerWidth: 1170;
+$maxScreenWidth: 1440;
+$mobileScreenWidth: 320;
+$tabletScreenWidth: 768;
+
+@function toRem($px) {
+    @return calc($px / 16) + rem,
+}
+
+@function tone($color, $tone: 1, $dir: up) {
+    $adjust: none; 
+    @if ($dir == up) { 
+        $adjust: $tone * 16;
+    } @else {
+        $adjust: $tone * -16;
+    }
+    @return color.adjust( 
+        $color,  
+        $red: $adjust,  
+        $green: $adjust,  
+        $blue: $adjust 
+    ); 
+}
+
+@mixin nest-to-avoid-collision {
+    & {
+        @content
+    }
+}
+
+@mixin adaptiveValue($property, $startSize, $minSize, $from: null, $to: $mobileScreenWidth) {
+    @include nest-to-avoid-collision {
+        $addSize: $startSize - $minSize;
+        @if $from == null {
+            $from: $maxScreenWidth;
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$to + px}) / #{$from - $to}))
+        } @else {
+            #{$property}: toRem($startSize);
+            @media (max-width: #{toRem($from)}) {
+                #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$to + px}) / #{$from - $to}))
+            }   
+        }
+        @if $to != $mobileScreenWidth {
+            @media (max-width: toRem($to)) {
+                #{$property}: toRem($minSize);
+            }
+        }
+    }
+}
+
+@mixin smoothAnimation($duration: 200ms) {
+    transition-property: opacity, top, transform, color, background-color, border-color, text-decoration-color, width;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: $duration;
+}

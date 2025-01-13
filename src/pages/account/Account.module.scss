@@ -1,0 +1,20 @@
+@use "@/scss/utils" as *;
+
+.account {
+    &-section {
+        @include adaptiveValue(padding, 135, 15);
+        @include nest-to-avoid-collision {
+            padding-top: toRem(80);
+            padding-bottom: toRem(140);
+        }
+    }
+    &-container {
+        max-width: toRem($containerWidth);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+
+

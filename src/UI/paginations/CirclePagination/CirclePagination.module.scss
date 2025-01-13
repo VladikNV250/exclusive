@@ -1,0 +1,44 @@
+@use "@/scss/utils" as *;
+
+.pagination {
+    &-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: toRem(12);
+        position: relative;
+        z-index: 3;
+    }
+
+    &-item {
+        width: toRem(12);
+        height: toRem(12);
+        border-radius: 50%;
+        cursor: pointer;
+        &__black {
+            @extend .pagination-item;
+            background: rgba($color: $btnColor3, $alpha: 0.5);
+        }
+        &__white {
+            @extend .pagination-item;
+            background: rgba($color: $primaryColor1, $alpha: 0.5);
+        }
+
+        &__current {
+            width: toRem(10);
+            height: toRem(10);
+            border-radius: 50%;
+            background: $secondaryColor3;
+            &__black {
+                @extend .pagination-item__current;
+                outline: toRem(2) solid rgba($color: $btnColor3, $alpha: 0.5);
+                border: toRem(1) solid $primaryColor1;
+                margin: toRem(2);
+            }
+            &__white {
+                @extend .pagination-item__current;
+                border: toRem(2) solid $primaryColor1;
+            }
+        }
+    }
+}

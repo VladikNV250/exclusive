@@ -1,0 +1,74 @@
+@use "@/scss/utils" as *;
+
+.table {
+    &-row {
+        width: 100%;
+        height: toRem(102);
+        background: $primaryColor1;
+        border-radius: toRem(4);
+        box-shadow: 0 1px 13px 0 rgba($color: #000000, $alpha: 0.05);
+        padding: toRem(24) toRem(40);
+        box-sizing: border-box;
+        position: relative;
+    }
+    &-item {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: toRem(16);
+        font-weight: 400;
+        color: $textColor3;
+        line-height: 1.5; /* 24/16 */
+        &:nth-child(1) { left: toRem(40); }
+        &:nth-child(2) { left: toRem(390); }
+        &:nth-child(3) { left: toRem(710); }
+        &:nth-child(4) { right: toRem(40); }
+
+        .item {
+            &-image {
+                width: toRem(54);
+                height: toRem(54);
+                object-fit: contain;
+
+                &-container { position: relative; }
+                &-button {
+                    width: toRem(18);
+                    height: toRem(18);
+                    background: $secondaryColor3;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    * {
+                        width: toRem(11);
+                        height: toRem(2);
+                        background: $primaryColor1;
+                        border-radius: toRem(3);
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform-origin: center;
+                    }
+                    :nth-child(1) { transform: translate(-50%, -50%) rotate(45deg); }
+                    :nth-child(2) { transform: translate(-50%, -50%) rotate(-45deg); }                    
+
+                }
+            }
+            &-name {
+                max-width: toRem(260);
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                @include smoothAnimation();
+
+                &:hover { color: $secondaryColor3; }
+            }    
+        }
+    }
+
+    &-ceil--name {
+        display: flex;
+        align-items: center;
+        gap: toRem(20);
+    }
+}

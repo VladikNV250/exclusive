@@ -1,0 +1,34 @@
+@use "@/scss/utils" as *;
+
+.product {
+    &-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-height: toRem(54);
+    }
+    &-image {
+        max-width: toRem(54);
+        max-height: toRem(54);
+        object-fit: contain;
+    }
+    &-name,
+    &-price {
+        font-size: toRem(16);
+        font-weight: 400;
+        color: $textColor3;
+        line-height: 1.5; /* 24/16 */
+    }
+    &-name {
+        max-width: toRem(230);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    gap: toRem(24);
+}

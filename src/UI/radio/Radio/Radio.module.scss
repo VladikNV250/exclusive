@@ -1,0 +1,14 @@
+@use "@/scss/utils" as *;
+
+.radio {
+    width: toRem(24);
+    height: toRem(24);
+    background: white;
+    margin: toRem(1.5);
+    border: toRem(5) solid white;
+    border-radius: 50%;
+    outline: toRem(2) solid black;
+    &:checked {
+        background: $btnColor3;
+    }   
+}

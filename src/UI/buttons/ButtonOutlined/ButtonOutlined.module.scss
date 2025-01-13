@@ -1,0 +1,26 @@
+@use "@/scss/utils" as *;
+
+.button {
+    font-weight: 500;
+    font-size: toRem(16);
+    line-height: 1.5; /* 24/16 */
+    border-radius: toRem(4);
+    border: toRem(1) solid $textColor2;
+    background: transparent;
+    color: $textColor3;
+    padding: toRem(16) toRem(48);
+    @include smoothAnimation();
+
+    &:hover {
+        color: $textColor2;
+    }
+
+    &:active {
+        color: tone($textColor2, 1, down);
+        transform: translateY(toRem(5));
+    }
+
+    &:disabled {
+        color: tone($textColor3, 2, up);
+    }
+}

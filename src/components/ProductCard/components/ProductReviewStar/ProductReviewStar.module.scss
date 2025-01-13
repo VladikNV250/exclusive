@@ -1,0 +1,16 @@
+@use "@/scss/utils" as *;
+
+.stars {
+    &-container {
+        grid-column: span 2;
+        display: flex;
+        gap: toRem(8);
+        .review-count {
+            font-size: toRem(14);
+            font-weight: 600;
+            line-height: 1.5; /* 21/14 */
+            color: $textColor3;
+            opacity: 0.5;
+        }
+    }
+} 

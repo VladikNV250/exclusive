@@ -1,0 +1,18 @@
+@use "@/scss/utils" as *;
+
+.logo {
+    font-family: "Inter";
+    font-size: toRem(24);
+    font-weight: 700;
+    line-height: 1; /* 24/24 */
+    letter-spacing: 0.03em;
+
+    &__white {
+        @extend .logo;
+        color: $textColor1;
+    }
+    &__black {
+        @extend .logo;
+        color: $textColor3;
+    }
+}

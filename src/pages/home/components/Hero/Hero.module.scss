@@ -1,0 +1,20 @@
+@use "@/scss/utils" as *;
+
+.hero {
+    @include adaptiveValue(padding, 135, 15);
+    @include nest-to-avoid-collision {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    &-container {
+        max-width: toRem($containerWidth);
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+    &-sidebar {
+        @media (max-width: toRem($maxScreenWidth)) {
+            display: none;
+        }
+    }
+}

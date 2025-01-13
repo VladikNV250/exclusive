@@ -1,0 +1,41 @@
+@use "@/scss/utils" as *;
+
+.sales {
+    @include adaptiveValue(padding, 135, 15);
+    @include nest-to-avoid-collision {
+        padding-top: toRem(140);
+        padding-bottom: 0;
+    }
+
+    &-container {
+        max-width: toRem($containerWidth);
+        border-bottom: toRem(0.5) solid rgba($color: $btnColor3, $alpha: 0.3);
+        padding-bottom: toRem(60);
+        margin: 0 auto;
+    }
+
+    .header-container {
+        display: grid;
+        grid-template-columns: auto auto 1fr;
+        align-items: flex-end;
+        
+        .timer-wrapper { 
+            margin-bottom: toRem(7);
+            margin-left: toRem(87);
+        }
+    
+        .button-container {
+            justify-self: flex-end;
+            margin-bottom: toRem(7);
+            *:not(:last-child) { margin-right: toRem(8); }
+        }
+    }
+    
+    .products-container { @include smoothAnimation(800ms); }
+    
+    .button-all {
+        display: block;
+        margin: toRem(60) auto 0;
+    }
+}
+

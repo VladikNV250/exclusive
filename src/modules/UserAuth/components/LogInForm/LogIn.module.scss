@@ -1,0 +1,21 @@
+@use "@/scss/utils" as *;
+
+.log-in {
+    width: toRem(370);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: toRem(40);
+    margin-top: toRem(48);
+
+    &--container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .button--forget-password {
+        font-size: toRem(16);
+        font-weight: 400;
+        color: $secondaryColor3;
+        line-height: 1.5; /* 24/16 */
+    }
+}

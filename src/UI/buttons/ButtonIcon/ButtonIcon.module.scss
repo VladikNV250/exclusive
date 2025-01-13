@@ -1,0 +1,15 @@
+@use "@/scss/utils" as *;
+
+.button-icon {
+    width: toRem(46);
+    height: toRem(46);
+    border-radius: 50%;
+    background: $secondaryColor1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+        color: $btnColor3;
+    }
+}

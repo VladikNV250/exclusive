@@ -1,0 +1,36 @@
+@use "@/scss/utils" as *;
+
+.loading {
+    font-size: toRem(64);
+    font-weight: 700;
+    color: $textColor1;
+    line-height: 1.5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(toRem(-150));
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: typewritter 3s ease-in infinite;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes typewritter {
+    0% { content: ""; }
+    8% { content: "E"; }
+    16% { content: "Ex"; }
+    24% { content: "Exc"; }
+    32% { content: "Excl"; }
+    40% { content: "Exclu"; }
+    48% { content: "Exclus"; }
+    56% { content: "Exclusi"; }
+    64% { content: "Exclusiv"; }
+    72% { content: "Exclusive"; }
+    80% { content: "Exclusive."; }
+    88% { content: "Exclusive.."; }
+    100% { content: "Exclusive..."; }
+}

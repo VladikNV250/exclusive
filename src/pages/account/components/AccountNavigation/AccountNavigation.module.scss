@@ -1,0 +1,31 @@
+@use "@/scss/utils" as *;
+
+.navigation {
+    .tab {
+        &:not(:last-child) { margin-bottom: toRem(24); }
+        &-name {
+            font-size: toRem(16);
+            font-weight: 500;
+            color: $textColor3;
+            line-height: 1.5; /* 24/16 */
+            &:not(:last-child) { margin-bottom: toRem(16); }
+        }
+    }
+    .subtab {
+        &-container {
+            padding-left: toRem(35);
+        }
+        &-name {
+            font-size: toRem(16);
+            font-weight: 400;
+            color: rgba($color: $textColor3, $alpha: 0.5);
+            line-height: 1.5; /* 24/16 */
+            cursor: pointer;
+            &:not(:last-child) { margin-bottom: toRem(8); }
+            &__current { 
+                @extend .subtab-name; 
+                color: $secondaryColor3; 
+            }
+        }
+    }
+}

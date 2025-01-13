@@ -1,0 +1,19 @@
+@use "@/scss/utils" as *;
+
+.button {
+    &-navigation {
+        border-radius: 50%;
+        width: toRem(46);
+        height: toRem(46);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: $secondaryColor1;
+        @include smoothAnimation();
+        &:hover > .button-icon > path { stroke-width: 2; }
+    }
+
+    &-icon {
+        color: $btnColor3;
+    }
+}

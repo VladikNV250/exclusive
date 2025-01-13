@@ -1,0 +1,10 @@
+@use "@/scss/utils" as *;
+
+.description {
+    max-width: toRem(373);
+    font-size: toRem(14);
+    font-weight: 400;
+    color: $textColor3;
+    line-height: 1.5; /* 21/14 */
+    margin-bottom: toRem(24);
+}

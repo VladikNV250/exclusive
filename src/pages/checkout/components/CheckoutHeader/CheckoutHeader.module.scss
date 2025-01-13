@@ -1,0 +1,11 @@
+@use "@/scss/utils" as *;
+
+.header {
+    font-family: "Inter";
+    font-size: toRem(36);
+    font-weight: 500;
+    color: $textColor3;
+    line-height: 0.83; /* 30/36 */
+    letter-spacing: 0.04rem;
+    margin-bottom: toRem(48);
+}

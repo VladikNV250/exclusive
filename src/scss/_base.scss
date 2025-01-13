@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:regular,italic,500,500italic,600,600italic);
+@import url(https://fonts.googleapis.com/css?family=Inter:regular,500,600,700,italic,500italic,600italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:regular,500,600,700,italic,500italic,600italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic);
+
+* {  
+    font-family: "Poppins", "Open Sans", "Inter", "IBM Plex Sans", sans-serif, serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    position: relative;
+    overflow-x: hidden;
+}
+
+button {
+    appearance: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    padding: 0;
+}
+
+input {
+    appearance: none;
+    background: transparent;
+    outline: none;
+    border: none;
+    margin: 0;
+    &[type="number"]::-webkit-inner-spin-button,
+    &[type="number"]::-webkit-outer-spin-button { // remove arrows from input:number
+        -webkit-appearance: none;
+    }
+    &[type="number"] { // for Firefox
+        -moz-appearance: textfield;
+        appearance: none;
+    }
+}
+
+textarea {
+    appearance: none;
+    border: none;
+    outline: none;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none; // for safari
+    -moz-appearance: none; // for firefox
+}
+
+h1,h2,
+h3,h4,
+h5,h6,
+span,p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: black;
+
+    &:visited {
+        color: inherit;
+    }
+}
+
+main {
+    min-width: 100%;
+    min-height: 100vh;
+}

@@ -1,0 +1,1 @@
+export {SearchLazy as Search} from "./Search.lazy";

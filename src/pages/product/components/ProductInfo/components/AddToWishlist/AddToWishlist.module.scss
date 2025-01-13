@@ -1,0 +1,48 @@
+@use "@/scss/utils" as *;
+
+.button {
+    width: toRem(40);
+    height: toRem(40);
+    border-radius: toRem(4);
+    border: toRem(1) solid rgba($color: #000000, $alpha: 0.5);
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icons-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        place-items: center;
+        > * {
+            grid-column: 1 / -1;
+            grid-row: 1 / -1;
+        }
+    }
+    
+    .heart:hover,
+    .trash:hover { color: #f91616; }
+    
+    .heart {
+        width: toRem(32);
+        height: toRem(32);
+        @include smoothAnimation();
+    
+        &__removed {
+            transform: scale(0);
+            @include smoothAnimation();
+        }
+    }
+    
+    .trash {
+        width: toRem(32);
+        height: toRem(32);
+        @include smoothAnimation();
+    
+        &__removed {
+            transform: scale(0);
+            @include smoothAnimation();
+        }
+    }
+}

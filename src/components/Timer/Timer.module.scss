@@ -1,0 +1,28 @@
+@use "@/scss/utils" as *;
+
+.timer {
+    display: flex;
+    &__circle {
+        @extend .timer;
+        align-items: center;
+        gap: toRem(24);   
+    }
+    &__text {
+        @extend .timer;
+        align-items: flex-end;
+        gap: toRem(17);
+    }
+}
+
+.semicolon {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(8);
+    margin-bottom: toRem(8);
+    > div {
+        width: toRem(4);
+        height: toRem(4);
+        background: $secondaryColor3;
+        border-radius: 50%;
+    }
+}

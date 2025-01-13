@@ -1,0 +1,9 @@
+@use "@/scss/utils" as *;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(32);
+    max-width: toRem(470);
+    width: toRem(470);
+}

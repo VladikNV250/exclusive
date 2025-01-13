@@ -1,0 +1,53 @@
+@use "@/scss/utils" as *;
+
+.top-header {
+    width: 100%;
+    background: $btnColor3;
+    color: $textColor1;
+    box-sizing: border-box;
+    @include adaptiveValue(padding, 135, 15);
+    @include nest-to-avoid-collision {
+        padding-top: toRem(12);
+        padding-bottom: toRem(12);
+    }
+
+    &--container {
+        max-width: toRem(1170);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        @media (max-width: toRem(1000)) {
+            grid-template-columns: 1fr;
+        }
+    }
+    &--content {
+        display: flex;
+        align-items: center;
+        gap: toRem(8);
+        justify-self: center;
+    }
+    &--text {
+        font-weight: 400;
+        color: $textColor1;
+        line-height: 1.5; /* 21/14 */
+        @include adaptiveValue(font-size, 14, 10, 1000);
+    }
+    &--link {
+        font-size: toRem(14);
+        font-weight: 600;
+        color: $textColor1;
+        line-height: 1.71; /* 24/14 */
+        text-decoration: underline;
+        @include adaptiveValue(font-size, 14, 10, 1000);
+    }
+
+    .select-wrapper {
+        z-index: 10;
+        display: inline-block;        
+        position: relative;
+        justify-self: end;
+        @media (max-width: toRem(1000)) {
+            justify-self: center;
+        }
+    }
+}

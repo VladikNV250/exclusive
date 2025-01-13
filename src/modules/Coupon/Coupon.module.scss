@@ -1,0 +1,7 @@
+@use "@/scss/utils" as *;
+
+.coupon-container {
+    display: flex;
+    align-items: center;
+    gap: toRem(16);
+}

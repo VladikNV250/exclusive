@@ -1,0 +1,23 @@
+@use "@/scss/utils" as *;
+
+.button-google {
+    width: 100%;
+    padding: toRem(16) 0;
+    border-radius: toRem(4);
+    border: toRem(1) solid rgba($color: $btnColor3, $alpha: 0.7);
+    font-size: toRem(16);
+    font-weight: 400;
+    color: $textColor3;
+    line-height: 1.5; /* 24/16 */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: toRem(16);
+}
+
+.icon > path{
+    &:nth-child(1) { color: #4285F4; }
+    &:nth-child(2) { color: #34A853; }
+    &:nth-child(3) { color: #FBBC04; }
+    &:nth-child(4) { color: #EA4335; }
+}

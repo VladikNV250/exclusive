@@ -1,0 +1,71 @@
+@use "@/scss/utils" as *;
+
+.quick-view {
+    &-window {
+        width: toRem(700);
+        padding: toRem(40);
+        box-sizing: border-box;
+        background: $primaryColor1;
+        border-radius: toRem(4);
+        display: flex;
+        justify-content: space-between;
+        gap: toRem(40);
+        z-index: 11;
+    }
+
+    &-image {
+        max-width: toRem(310);
+        max-height: toRem(310);
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    &-body {
+        max-width: toRem(270);
+    }
+
+    &-name {
+        max-width: toRem(270);
+        font-weight: 500;
+        line-height: 1.5; /* 24/16 */
+        color: $textColor3;
+        margin-bottom: toRem(8);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    
+    &-description {
+        max-width: toRem(220);
+        width: max-content;
+        font-size: toRem(12);
+        font-weight: 400;
+        color: $textColor3;
+        line-height: 1.75; /* 21/12 */
+        margin-bottom: toRem(10);
+    }
+    
+    &-content {
+        display: flex;
+        margin-bottom: toRem(8);
+    }
+    
+    &-price {
+        font-weight: 500;
+        line-height: 1.5; /* 24/16 */
+        color: $secondaryColor3;
+        &__old {
+            @extend .quick-view-price;
+            color: $textColor3;
+            opacity: 0.5;
+            text-decoration: line-through;
+        }
+        + .quick-view-price__old { margin-left: toRem(8); }
+    }   
+}
+
+.review-wrapper {
+    margin-bottom: toRem(16);
+}

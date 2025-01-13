@@ -1,0 +1,1 @@
+export type ListMode = "all-products" | "slider";

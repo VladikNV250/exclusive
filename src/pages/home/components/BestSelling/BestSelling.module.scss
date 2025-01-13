@@ -1,0 +1,20 @@
+@use "@/scss/utils" as *;
+
+.best-selling {
+    @include adaptiveValue(padding, 135, 15);
+    @include nest-to-avoid-collision {
+        padding-top: toRem(70);
+        padding-bottom: toRem(140);
+    }
+    &--container {
+        max-width: toRem($containerWidth);
+        margin: 0 auto;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: toRem(60);
+    }
+}

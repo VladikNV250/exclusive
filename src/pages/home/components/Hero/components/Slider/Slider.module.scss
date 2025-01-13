@@ -1,0 +1,30 @@
+@use "@/scss/utils" as *;
+
+.slider {
+    aspect-ratio: 892 / 344;
+    width: 100%;
+    padding-top: toRem(40);
+    margin-left: toRem(45);
+    @media (max-width: toRem($maxScreenWidth)) {
+        margin-left: 0;
+    }
+
+    &-container {
+        width: 100%;
+        height: 100%;
+        background: $btnColor3;
+        color: $textColor1;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        place-items: center;
+        > * {
+            grid-column: 1 / -1;
+            grid-row: 1 / -1;
+        }
+    }
+    .pagination-wrapper {
+        margin-top: toRem(-11 - 14); // 14 --- height of pagination      
+    }
+}
+

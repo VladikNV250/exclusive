@@ -1,0 +1,13 @@
+@use "@/scss/utils" as *;
+
+.footer {
+    &-content {
+        display: flex;
+        flex-direction: column;
+        gap: toRem(16);
+    }
+    &-heading {
+        color: $textColor1;
+        margin-bottom: toRem(24 - 16); // 16 --- gap
+    }
+}

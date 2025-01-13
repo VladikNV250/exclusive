@@ -1,0 +1,40 @@
+@use "@/scss/utils" as *;
+
+.checkout {
+    &-section {
+        @include adaptiveValue(padding, 135, 15);
+        @include nest-to-avoid-collision {
+            padding-top: toRem(80);
+            padding-bottom: toRem(140);
+        }
+    }
+    &-container {
+        max-width: toRem(1170);
+        margin: 0 auto;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    &-content {
+        &__two {
+            margin-top: toRem(110);
+        }
+    }
+}
+
+.product-item-container {
+    max-width: toRem(425);
+    display: flex;
+    flex-direction: column;
+    gap: toRem(32);
+    margin-bottom: toRem(32);
+}
+
+.total-item-wrapper {
+    max-width: toRem(425);
+    margin-bottom: toRem(32);
+}
+
+.coupon-wrapper {
+    margin-bottom: toRem(32);
+}

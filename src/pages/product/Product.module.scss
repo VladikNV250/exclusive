@@ -1,0 +1,23 @@
+@use "@/scss/utils" as *;
+
+.product {
+    &-section {
+        @include adaptiveValue(padding, 135, 15);
+        @include nest-to-avoid-collision {
+            padding-top: toRem(80);
+            padding-bottom: toRem(140);
+        }
+    }
+    &-container {
+        max-width: toRem($containerWidth);
+        margin: 0 auto toRem(140);
+        display: flex;
+        justify-content: space-between;
+        @include adaptiveValue(gap, 70, 15);
+    }
+
+    &-list-container {
+        max-width: toRem($containerWidth);
+        margin: 0 auto;
+    }
+}

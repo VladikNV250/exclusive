@@ -1,0 +1,70 @@
+@use "@/scss/utils" as *;
+
+.footer {
+    width: 100%;
+    background-color: $btnColor3;
+    color: $textColor1;
+    display: flex;
+    flex-direction: column;
+    gap: toRem(60);
+    box-sizing: border-box;
+    padding-bottom: toRem(24);
+
+    &-wrapper {
+        @include adaptiveValue(padding, 135, 15);
+        @include nest-to-avoid-collision {
+            padding-top: toRem(80);
+            padding-bottom: 0;
+        }
+    }
+    &-container {
+        max-width: toRem(1170);
+        display: flex;
+        flex-wrap: wrap;
+        // grid-template-columns: repeat(5, auto);
+        margin: 0 auto;
+        @include adaptiveValue(gap, 87, 40, $maxScreenWidth);
+    }
+    &-tip {
+        width: max-content;
+        font-size: toRem(12);
+        font-weight: 400;
+        color: rgba($color: $textColor1, $alpha: 0.7);
+        line-height: 1.5; /* 18/12 */
+    }
+    &-logo { 
+        order: -1; 
+        margin-bottom: toRem(24 - 16); //16 --- gap 
+    }
+}
+
+.app {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: toRem(8);
+
+    .store-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.copyright {
+    font-weight: 400;
+    line-height: 1.5; /* 24/16 */
+    @include adaptiveValue(font-size, 16, 12, $maxScreenWidth);
+
+    &-container {
+        width: 100%;
+        padding: toRem(16) toRem(15);
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: toRem(6);
+        border-top: toRem(1) solid rgba($color: $primaryColor1, $alpha: 0.4);
+        color: rgba($color: $primaryColor1, $alpha: 0.6);
+    }
+}

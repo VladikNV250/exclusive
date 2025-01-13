@@ -1,0 +1,18 @@
+@use "@/scss/utils" as *;
+
+.input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: toRem(8);
+
+    .label {
+        font-size: toRem(16);
+        font-weight: 400;
+        color: rgba($color: $textColor3, $alpha: 0.4);
+        line-height: 1.5; /* 24/16 */
+        &__required {
+            color: rgba($color: $secondaryColor3, $alpha: 0.4);
+        }
+    }
+}

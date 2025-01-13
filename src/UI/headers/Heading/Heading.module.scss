@@ -1,0 +1,59 @@
+@use "@/scss/utils" as *;
+
+.h1,.h2,
+.h3,.h4,
+.h5,.h6 {
+    white-space: pre-line;
+}
+
+.h1 {
+    font-family: "Inter", "IBM Plex Sans", sans-serif, serif;
+    font-weight: 600;
+    line-height: 1.25; /* 60/48 */
+    letter-spacing: 0.04em;
+    @include adaptiveValue(font-size, 48, 36, $tabletScreenWidth);
+}
+
+.h2 {
+    font-family: "Inter", "IBM Plex Sans", sans-serif, serif;
+    font-weight: 600;
+    line-height: 1.33; /* 48/36 */
+    letter-spacing: 0.04em;
+    @include adaptiveValue(font-size, 36, 28, $tabletScreenWidth);
+}
+
+.h3 {
+    font-family: "Inter", "IBM Plex Sans", sans-serif, serif;
+    font-weight: 700;
+    line-height: 0.93; /* 30/32 */
+    letter-spacing: 0.04em;
+    @include adaptiveValue(font-size, 32, 18, $tabletScreenWidth);
+}
+
+.h4 {
+    font-family: "Inter", "IBM Plex Sans", sans-serif, serif;
+    font-weight: 600;
+    line-height: 1; /* 24/24 */
+    letter-spacing: 0.03em;
+    @include adaptiveValue(font-size, 24, 16, $tabletScreenWidth)
+}
+
+.h5 {
+    font-family: "Poppins", "Open Sans", "Montserrat", sans-serif, serif;
+    font-weight: 600;
+    line-height: 1.4; /* 28/20 */
+    @include adaptiveValue(font-size, 20, 16, $tabletScreenWidth)
+}
+
+.h6 {
+    font-family: "Poppins", "Open Sans", "Montserrat", sans-serif, serif;    
+    font-weight: 600;
+    line-height: 1.25; /* 20/16 */
+    @include adaptiveValue(font-size, 16, 16, $tabletScreenWidth)
+}
+
+.loading-mask {
+    width: fit-content;
+    color: transparent !important;
+    background: rgba($color: #000000, $alpha: 0.1);
+}

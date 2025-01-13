@@ -1,0 +1,23 @@
+@use "@/scss/utils" as *;
+
+.contact-form {
+    max-width: toRem(800);
+    background: $primaryColor1;
+    border-radius: toRem(4);
+    box-shadow: 0 1px 13px 0 rgba($color: #000000, $alpha: 0.05);
+    padding: toRem(40) toRem(32);
+    display: flex;
+    flex-direction: column;
+    gap: toRem(32);
+    box-sizing: border-box;
+
+    .inputs-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: toRem(16);
+    }
+
+    .button-wrapper {
+        align-self: flex-end;
+    }
+}

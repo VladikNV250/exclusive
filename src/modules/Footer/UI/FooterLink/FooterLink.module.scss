@@ -1,0 +1,9 @@
+@use "@/scss/utils" as *;
+
+.footer-link { 
+    font-size: toRem(16);
+    font-weight: 400;
+    color: $textColor1;
+    line-height: 1.5; /* 24/16 */
+    width: max-content;
+}

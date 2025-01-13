@@ -1,0 +1,38 @@
+@use "@/scss/utils" as *;
+
+.person {
+    &-card {
+        max-width: toRem(370);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    &-portrait {
+        max-width: toRem(370);
+        max-height: toRem(430);
+
+        &--container {
+            width: toRem(370);
+            height: toRem(430);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            background: $secondaryColor1;
+            margin-bottom: toRem(32);
+        }
+    }
+    &-name {
+        margin-bottom: toRem(8);   
+    }
+    &-position {
+        font-size: toRem(16);
+        font-weight: 400;
+        color: $textColor3;
+        line-height: 1.5; /* 24/16 */
+        margin-bottom: toRem(16);
+    }
+    &-links {
+        display: flex;
+        gap: toRem(16);
+    }
+}

@@ -1,0 +1,14 @@
+@use "@/scss/utils" as *;
+
+&-link {
+    display: inline-block;
+    font-size: toRem(14);
+    font-weight: 400;
+    color: rgba($color: $textColor3, $alpha: 0.5);
+    line-height: 1.5; /* 21/14 */
+    &:hover { text-decoration: underline; }
+    &__current {
+        @extend .roadmap-link;
+        color: $textColor3;
+    }
+}

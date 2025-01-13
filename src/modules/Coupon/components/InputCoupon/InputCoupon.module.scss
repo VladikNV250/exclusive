@@ -1,0 +1,14 @@
+@use "@/scss/utils" as *;
+
+.input {
+    min-width: toRem(300);
+    padding: toRem(16) toRem(24);
+    box-sizing: border-box;
+    border: toRem(1) solid $btnColor3;
+    border-radius: toRem(4);
+    font-size: toRem(16);
+    font-weight: 400;
+    color: $textColor3;
+    line-height: 1.5; /* 24/16 */
+    &::placeholder { color: rgba($color: $textColor3, $alpha: 0.5); }
+}

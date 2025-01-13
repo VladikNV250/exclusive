@@ -1,0 +1,52 @@
+@use "@/scss/utils" as *;
+
+.input-email--container {
+    position: relative;
+    display: inline-block;
+
+    .input-email {
+        width: toRem(217);
+        height: toRem(48);
+        background: transparent;
+        border-radius: toRem(4);
+        padding: toRem(12) toRem(16 + 24) toRem(12) toRem(16); // + 24 --- icon
+        box-sizing: border-box;
+        color: $textColor3;
+        font-size: toRem(16); 
+        font-weight: 400;
+        line-height: 1.5; /* 18/12 */
+        &__white {
+            @extend .input-email;
+            border: toRem(1.5) solid $primaryColor1;
+            color: $primaryColor1;
+            &::placeholder {
+                color: rgba($color: $textColor1, $alpha: 0.4);
+            }
+        }
+        &__black {
+            @extend .input-email;
+            border: toRem(1.5) solid $textColor3;
+            color: $textColor3;
+            &::placeholder {
+                color: rgba($color: $textColor3, $alpha: 0.4);
+            }
+        }
+    }
+
+    .icon {
+        position: absolute;
+        top: 50%;
+        right: toRem(16);
+        transform: translateY(-50%);
+        pointer-events: none;
+        &__white { 
+            @extend .icon;
+            color: $primaryColor1; 
+        }
+        &__black { 
+            @extend .icon;
+            color: $textColor3; 
+        }
+    }
+}
+

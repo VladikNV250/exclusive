@@ -1,0 +1,12 @@
+@use "@/scss/utils" as *;
+
+.button-circle {
+    width: toRem(34);
+    height: toRem(34);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $primaryColor1;
+    color: $btnColor3;
+}

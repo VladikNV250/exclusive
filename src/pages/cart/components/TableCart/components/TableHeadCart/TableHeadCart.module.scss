@@ -1,0 +1,32 @@
+@use "@/scss/utils" as *;
+
+.table {
+    &-head {
+        width: 100%;
+        height: toRem(72);
+        background: $primaryColor1;
+        border-radius: toRem(4);
+        box-shadow: 0 1px 13px 0 rgba($color: #000000, $alpha: 0.05);
+    }
+    &-row {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    &-item {
+        font-size: toRem(16);
+        font-weight: 400;
+        color: $textColor3;
+        line-height: 1.5; /* 24/16 */
+        text-align: left;
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+
+        &:nth-child(1) { left: toRem(40); }
+        &:nth-child(2) { left: toRem(390); }
+        &:nth-child(3) { left: toRem(710); }
+        &:nth-child(4) { right: toRem(40); }
+    }
+}

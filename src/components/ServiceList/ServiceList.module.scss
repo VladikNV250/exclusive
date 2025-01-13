@@ -1,0 +1,8 @@
+@use "@/scss/utils" as *;
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: toRem(88);
+    margin: toRem(140) auto 0;
+}

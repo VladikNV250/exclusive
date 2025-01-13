@@ -1,0 +1,51 @@
+@use "@/scss/utils" as *;
+
+.story {
+    @include adaptiveValue(padding, 135, 15);
+    @include nest-to-avoid-collision {
+        padding-top: toRem(42);
+        padding-bottom: toRem(140);
+    }
+
+    &-container {
+        max-width: toRem($containerWidth);
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;            
+        flex-direction: column-reverse;
+        gap: toRem(75);
+        @media (min-width: toRem(1200)) {
+            flex-direction: row;
+        }
+    }
+    &-body {
+        display: flex;
+        flex-direction: column;
+        gap: toRem(40);
+    }
+    &-title {
+        font-family: "Inter";
+        font-size: toRem(54);
+        font-weight: 600;
+        color: $textColor3;
+        line-height: 1.18; /* 64/54 */
+        letter-spacing: 0.06rem;
+        @include adaptiveValue(font-size, 54, 36);
+    }
+    &-text {
+        font-size: toRem(16);
+        font-weight: 400;
+        color: $textColor3;
+        line-height: 1.62; /* 26/16 */
+    }
+    &-image {
+        aspect-ratio: 705 / 609;
+        max-width: toRem(705);
+        @include adaptiveValue(margin-right, -135, -15);
+        @media (max-width: toRem(1200)) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+}

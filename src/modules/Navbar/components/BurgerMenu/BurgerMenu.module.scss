@@ -1,0 +1,34 @@
+@use "@/scss/utils" as *;
+
+$bg-menu: #fff;
+
+.burger-menu {
+    background: transparent;
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+
+    &__open {   
+        @extend .burger-menu;
+        background: $bg-menu;
+        opacity: 1;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 6;
+        @include smoothAnimation(400ms);
+
+        // [data-burger="list"] { use data-burger attribute in element to edit when menu open 
+        //     visibility: visible;
+        //     position: relative;
+        //     opacity: 1;
+        //     z-index: 11;
+        // }
+    }
+}

@@ -1,0 +1,7 @@
+@use "@/scss/utils" as *;
+
+.icon-links {
+    display: flex;
+    gap: toRem(24);
+    .link { color: $textColor1; }
+}
