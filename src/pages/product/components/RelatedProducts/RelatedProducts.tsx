@@ -16,7 +16,7 @@ export default function RelatedProducts({tags, id}: Props) {
     const uniqueIDs = new Set();
     const relatedProducts = tags.map(tag => products.filter(product => { // filter products with the same id
         if (id === product.id) return false;
-        if (product.tags.includes(tag)) {
+        if (product?.tags?.includes(tag)) {
             if (!uniqueIDs.has(product.id)) {
                 uniqueIDs.add(product.id);
                 return true;

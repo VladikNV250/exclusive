@@ -27,7 +27,7 @@ export default function ProductQuantity({id, defaultQuantity = 1}: Props) {
 
     useEffect(() => {
         dispatch(updateQuantity({id, quantity}))
-    }, [quantity])
+    }, [quantity, dispatch, id, updateQuantity])
 
     return (
         <InputProductQuantity  

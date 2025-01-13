@@ -1,0 +1,6 @@
+@use "@/scss/utils" as *;
+
+.heading {
+    font-weight: 500;
+    margin-bottom: toRem(24);
+}

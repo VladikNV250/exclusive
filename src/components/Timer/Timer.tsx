@@ -17,52 +17,47 @@ export function Timer({date, type = "circle", colorStyle = "black"}: Props) {
     const [hours, setHours] = useState(getTime({secondsLeft, days}));
     const [minutes, setMinutes] = useState(getTime({secondsLeft, days, hours}));
     const [seconds, setSeconds] = useState(getTime({secondsLeft, days, hours, minutes}));
-    const interval = useRef(null);
+    const interval = useRef(0);
 
-    // Функція для оновлення таймера
-    const updateTimer = () => {
-        setSeconds(prevSeconds => {
-        if (prevSeconds === 0) {
-            if (minutes === 0 && hours === 0 && days === 0) {
-            clearInterval(interval.current);
-            return 0;
-            }
-            updateMinutes();
-            return 59;
-        }
-        return prevSeconds - 1;
-        });
-    };
-
-    // Функція для оновлення хвилин
-    const updateMinutes = () => {
-        setMinutes(prevMinutes => {
-        if (prevMinutes === 0) {
-            updateHours();
-            return 59;
-        }
-        return prevMinutes - 1;
-        });
-    };
-
-    // Функція для оновлення годин
-    const updateHours = () => {
-        setHours(prevHours => {
-        if (prevHours === 0) {
-            updateDays();
-            return 23;
-        }
-        return prevHours - 1;
-        });
-    };
-
-    // Функція для оновлення днів
-    const updateDays = () => {
-        setDays(prevDays => prevDays - 1);
-    };
-
-    // Використання useEffect для запуску інтервалу
     useEffect(() => {
+        const updateTimer = () => {
+            setSeconds(prevSeconds => {
+            if (prevSeconds === 0) {
+                if (minutes === 0 && hours === 0 && days === 0) {
+                clearInterval(interval.current);
+                return 0;
+                }
+                updateMinutes();
+                return 59;
+            }
+            return prevSeconds - 1;
+            });
+        };
+    
+        const updateMinutes = () => {
+            setMinutes(prevMinutes => {
+            if (prevMinutes === 0) {
+                updateHours();
+                return 59;
+            }
+            return prevMinutes - 1;
+            });
+        };
+    
+        const updateHours = () => {
+            setHours(prevHours => {
+            if (prevHours === 0) {
+                updateDays();
+                return 23;
+            }
+            return prevHours - 1;
+            });
+        };
+    
+        const updateDays = () => {
+            setDays(prevDays => prevDays - 1);
+        };
+
         interval.current = setInterval(updateTimer, 1000);
         return () => clearInterval(interval.current);
     }, [seconds, minutes, hours, days]);

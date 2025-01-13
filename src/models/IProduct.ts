@@ -1,5 +1,5 @@
-import { Size } from "@/types/types"
-
+export type NumericKeys = 0.5 | 1 | 1.5 | 2 | 2.5 | 3 | 3.5 | 4 | 4.5 | 5;
+export type SizeType = "XS" | "S" | "M" | "X" | "XL" | "XXL" | "XXXL"; 
 export interface IProduct {
     id: string,
     name: string,
@@ -7,22 +7,12 @@ export interface IProduct {
     price: number,
     oldPrice?: number,
     rating?: {
-        0.5?: number,
-        1?:   number,
-        1.5?: number,
-        2?:   number,
-        2.5?: number,
-        3?:   number,
-        3.5?: number,
-        4?:   number,
-        4.5?: number,
-        5?:   number,
-        [key: number]: number,
+        [key in NumericKeys]?: number;
     }
     isNew?: boolean,
     isInStock?: boolean,
     availableColors?: string[],
-    size?: Size[],
+    size?: SizeType[],
     quantity?: number,
     
     images: {

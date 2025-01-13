@@ -13,13 +13,13 @@ import { ProductReviewStar } from "./components/ProductReviewStar/ProductReviewS
 import { IProduct } from "@/models/IProduct";
 import formatPrice from "@/helpers/formatPrice";
 import getDiscount from "./helpers/getDiscount";
-import { Link } from "react-router-dom";
 import AddToCart from "./components/AddToCart/AddToCart";
 import { useAppSelector } from "@/hooks/redux";
 import selectExchangeRate from "@/store/selectors/selectExchangeRate";
 import { useTranslation } from "react-i18next";
 
 import defaultPlaceholder from "@/assets/default-placeholder.png";
+import { Link } from "react-router";
 
 interface Props {
     id              : IProduct["id"],

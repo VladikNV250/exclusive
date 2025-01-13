@@ -1,0 +1,5 @@
+@use "@/scss/utils" as *;
+
+.input-wrapper label {
+    color: $textColor3 !important;
+}

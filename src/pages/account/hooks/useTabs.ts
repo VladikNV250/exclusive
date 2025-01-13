@@ -7,8 +7,8 @@ type ReturnedType = [
     (tab: string) => void
 ]
 
-export default function useTabs(tabs: Tabs[]): ReturnedType {
-    const firstSubTab = tabs[0].subTabs[0];
+export default function useTabs(tabs: Tabs[] = []): ReturnedType {
+    const firstSubTab = tabs[0]?.subTabs?.[0] || "";
     const [currentTab, setCurrentTab] = useState(firstSubTab);
 
     const changeTab = (tab: string) => {

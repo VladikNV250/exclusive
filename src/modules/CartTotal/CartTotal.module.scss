@@ -1,0 +1,14 @@
+@use "@/scss/utils" as *;
+
+.cart {
+    &-total {
+        border: toRem(1) solid #000;
+        border-radius: toRem(4);
+        padding: toRem(32) toRem(24);
+        min-width: toRem(470);
+        box-sizing: border-box;
+    }
+    &-container {
+        margin-bottom: toRem(16);
+    }
+}

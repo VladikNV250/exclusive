@@ -3,10 +3,10 @@ import classes from "./ProductColors.module.scss";
 import { useTranslation } from "react-i18next";
 
 interface Props {
-    colors: string[]
+    colors?: string[]
 }
 
-export default function ProductColors({colors}: Props) {
+export default function ProductColors({colors = []}: Props) {
     const { t } = useTranslation();
 
     if (colors?.length > 1) return (

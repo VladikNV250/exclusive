@@ -1,6 +1,6 @@
-import { ReviewStar } from "@/components/ReviewStar/ReviewStar";
+import ReviewStar from "@/components/ReviewStar/ReviewStar";
 import classes from "./ProductReviewStar.module.scss";
-import { CSSProperties, useEffect, useRef } from "react";
+import { CSSProperties, useEffect } from "react";
 import { IProduct } from "@/models/IProduct";
 
 interface Props {
@@ -23,23 +23,29 @@ export function ProductReviewStar({id, rating, isLoading = false}: Props) {
         
     }, [rating])
 
-    const getCountReview = () => {
-        let result = 0;
-        Object.values(rating).forEach(item => {
-            result += item;
-        })
-        return result;
+    const getCountReview = (): number => {
+        if (rating) {
+            let result = 0;
+            Object.values(rating).forEach(item => {
+                result += item;
+            })
+            return result;
+        }
+        return 0;
     }
 
-    const calculateAvaragePoint = () => {
-        const countReview = getCountReview();
-        let sumOfScores = 0;
-
-        for (const [key, value] of Object.entries(rating)) {
-            sumOfScores += Number(key) * value;
+    const calculateAvaragePoint = (): number => {
+        if (rating) {
+            const countReview = getCountReview();
+            let sumOfScores = 0;
+    
+            for (const [key, value] of Object.entries(rating)) {
+                sumOfScores += Number(key) * value;
+            }
+    
+            if (countReview > 0) return sumOfScores / countReview;
         }
-
-        if (countReview > 0) return sumOfScores / countReview;
+        return 0;
     }
 
     if (isLoading) return (

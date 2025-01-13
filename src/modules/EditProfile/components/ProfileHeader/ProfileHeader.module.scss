@@ -1,0 +1,7 @@
+@use "@/scss/utils" as *;
+
+.header {
+    font-weight: 500;
+    color: $secondaryColor3;
+    margin-bottom: toRem(16);
+}

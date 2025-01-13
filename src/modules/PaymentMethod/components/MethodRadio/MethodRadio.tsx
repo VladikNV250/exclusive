@@ -4,12 +4,12 @@ import bkash from "@/assets/payment-methods/Bkash.png";
 import visa from "@/assets/payment-methods/visa.png";
 import mastercard from "@/assets/payment-methods/mastercard.png";
 import nagad from "@/assets/payment-methods/nagad.png";
-import { PaymentMethod, PaymentMethodRadio } from "../../types/types";
+import { PaymentMethodType, PaymentMethodRadio } from "../../types/types";
 
 interface Props {
     methods: PaymentMethodRadio[],
-    onChange: (method: PaymentMethod) => void;
-    selectedMethod?: PaymentMethod,
+    onChange: (method: PaymentMethodType) => void;
+    selectedMethod?: PaymentMethodType,
 }
 
 export default function MethodRadio({methods, selectedMethod, onChange}: Props) {

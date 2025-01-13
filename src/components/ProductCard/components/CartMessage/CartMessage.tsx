@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Message from "@/components/Message/Message";
 import classes from "./CartMessage.module.scss";
+import { Link } from "react-router";
 
 interface Props {
     isOpen: boolean;

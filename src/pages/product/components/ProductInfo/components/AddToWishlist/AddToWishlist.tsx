@@ -1,6 +1,6 @@
 import classes from "./AddToWishlist.module.scss";
-import Heart from "@/assets/icons/heart-small.svg";
-import Trash from "@/assets/icons/trash.svg";
+import Heart from "@/assets/icons/heart-small.svg?react";
+import Trash from "@/assets/icons/trash.svg?react";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import { IProduct } from "@/models/IProduct";
 import { wishlistSlice } from "@/store/reducers/WishlistSlice";

@@ -1,35 +1,40 @@
-import { ReviewStar } from "@/components/ReviewStar/ReviewStar";
+import ReviewStar from "@/components/ReviewStar/ReviewStar";
 import classes from "./ProductReviews.module.scss";
 import { useTranslation } from "react-i18next";
 import { IProduct } from "@/models/IProduct";
-import { useEffect, useRef } from "react";
 
 interface Props {
-    isInStock: boolean,
+    isInStock?: boolean,
     id: IProduct["id"],
     rating: IProduct["rating"],
 }
 
-export default function ProductReviews({isInStock, id, rating}: Props) {
+export default function ProductReviews({isInStock = false, id, rating}: Props) {
     const { t } = useTranslation();
 
-    const getCountReview = () => {
-        let result = 0;
-        Object.values(rating).forEach(item => {
-            result += item;
-        })
-        return result;
+    const getCountReview = (): number => {
+        if (rating) {
+            let result = 0;
+            Object.values(rating).forEach(item => {
+                result += item;
+            })
+            return result;
+        }
+        return 0;
     }
 
-    const calculateAvaragePoint = () => {
-        const countReview = getCountReview();
-        let sumOfScores = 0;
-
-        for (const [key, value] of Object.entries(rating)) {
-            sumOfScores += Number(key) * value;
+    const calculateAvaragePoint = (): number => {
+        if (rating) {
+            const countReview = getCountReview();
+            let sumOfScores = 0;
+    
+            for (const [key, value] of Object.entries(rating)) {
+                sumOfScores += Number(key) * value;
+            }
+    
+            if (countReview > 0) return sumOfScores / countReview;
         }
-
-        if (countReview > 0) return sumOfScores / countReview;
+        return 0;
     }
 
     return (

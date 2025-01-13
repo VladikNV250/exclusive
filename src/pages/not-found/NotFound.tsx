@@ -1,10 +1,10 @@
-import Roadmap from "@/components/Roadmap/Roadmap";
+import Roadmap from "@/modules/Roadmap/Roadmap";
 import classes from "./NotFound.module.scss";
 import ButtonLarge from "@/UI/buttons/ButtonLarge/ButtonLarge";
-import { Link } from "react-router-dom";
 import { routeSlice } from "@/store/reducers/RouteSlice";
 import { useAppDispatch } from "@/hooks/redux";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router";
 
 export default function NotFound() {
   const { t } = useTranslation();

@@ -9,14 +9,14 @@ import Message from "@/components/Message/Message";
 import { validateEmailPhone } from "../../helpers/validateEmailPhone";
 import { validatePassword } from "../../helpers/validatePassword";
 import { useNavigate } from "react-router";
-// import { useAppDispatch, useAppSelector } from "@/hooks/redux";
-// import { createUser, fetchUserByEmail } from "@/store/reducers/ActionCreators";
+import { useAppDispatch, useAppSelector } from "@/hooks/redux";
+import { createUser, fetchUserByEmail } from "@/store/reducers/ActionCreators";
 
 export default function SignUpForm() {
     const { t } = useTranslation();
     const navigate = useNavigate();
-    // const dispatch = useAppDispatch();
-    // const {isLoading} = useAppSelector(state => state.userReducer);
+    const dispatch = useAppDispatch();
+    const {isLoading} = useAppSelector(state => state.userReducer);
     const [message, setMessage] = useState({isOpen: false, text: ""});
     const [formData, setFormData] = useState({
         name: "",
@@ -52,29 +52,29 @@ export default function SignUpForm() {
             return;
         }
 
-        // try {
-        //     const user = await dispatch(fetchUserByEmail(emailPhone)).unwrap();
-        //     if (user) {
-        //         showMessage(t("user-exist"));
-        //         return;
-        //     } else {
-        //         const firstName = name.split(" ")[0];
-        //         const lastName = name.split(" ")[1];
-        //         const newUser: IUser = {
-        //             firstName,
-        //             lastName,
-        //             email: emailPhone,
-        //             address: "",
-        //             password,
-        //             reviews: [],
-        //         }
+        try {
+            const user = await dispatch(fetchUserByEmail(emailPhone)).unwrap();
+            if (user) {
+                showMessage(t("user-exist"));
+                return;
+            } else {
+                const firstName = name.split(" ")[0];
+                const lastName = name.split(" ")[1];
+                const newUser: IUser = {
+                    firstName,
+                    lastName,
+                    email: emailPhone,
+                    address: "",
+                    password,
+                    reviews: [],
+                }
         
-        //         await dispatch(createUser(newUser));
-        //         navigate("/")   
-        //     }
-        // } catch (e) {
-        //     console.error(e);
-        // }
+                await dispatch(createUser(newUser));
+                navigate("/")   
+            }
+        } catch (e) {
+            console.error(e);
+        }
     }
 
     return (
@@ -86,19 +86,19 @@ export default function SignUpForm() {
                 {message.text}    
             </Message>
             <InputAuth 
-                // required 
+                required 
                 onChange={handleChange} 
                 placeholder={t("placeholder-auth-name")} 
                 name="name" 
             />
             <InputAuth 
-                // required 
+                required 
                 onChange={handleChange} 
                 placeholder={t("placeholder-auth-email")} 
                 name="emailPhone" 
             />
             <InputAuth 
-                // required 
+                required 
                 onChange={handleChange} 
                 placeholder={t("placeholder-auth-password")} 
                 name="password" 
@@ -106,9 +106,9 @@ export default function SignUpForm() {
             />
             <div className={classes["buttons-container"]}>
                 <div className={classes["button-wrapper"]}>
-                    {/* <ButtonLarge type="submit" disabled={isLoading}>
+                    <ButtonLarge type="submit" disabled={isLoading}>
                         {t("create-account")}
-                    </ButtonLarge> */}
+                    </ButtonLarge>
                 </div>
                 <ButtonGoogle />
             </div>

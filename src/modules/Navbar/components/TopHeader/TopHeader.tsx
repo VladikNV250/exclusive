@@ -2,14 +2,13 @@ import Select from "@/UI/selects/Select/Select";
 import classes from "./TopHeader.module.scss";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-// import { OptionType } from "@/types/types";
-// import { useAppDispatch } from "@/hooks/redux";
-// import { routeSlice } from "@/store/reducers/RouteSlice";
+import { useAppDispatch } from "@/hooks/redux";
+import { routeSlice } from "@/store/reducers/RouteSlice";
 
 export default function TopHeader() {
     const { t, i18n } = useTranslation();
-    // const dispatch = useAppDispatch();
-    // const { updateHome } = routeSlice.actions;
+    const dispatch = useAppDispatch();
+    const { updateHome } = routeSlice.actions;
     const languages = useMemo(() => [
         {value: "uk", name: "Українська"},
         {value: "en", name: "English"},
@@ -29,8 +28,8 @@ export default function TopHeader() {
 
     useEffect(() => {
         i18n.changeLanguage(selectedLanguage.value);
-        // dispatch(updateHome());
-    }, [selectedLanguage, i18n])
+        dispatch(updateHome());
+    }, [selectedLanguage, i18n, dispatch, updateHome])
 
     return (
         <div className={classes["top-header"]}>

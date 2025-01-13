@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import classes from "./AccountNavigation.module.scss";
 import { Tabs } from "../../types/types";
+import { Link } from "react-router";
 
 interface Props {
     accountTabs: Tabs[],

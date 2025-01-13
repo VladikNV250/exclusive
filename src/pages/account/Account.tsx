@@ -1,4 +1,4 @@
-import Roadmap from "@/components/Roadmap/Roadmap";
+import Roadmap from "@/modules/Roadmap/Roadmap";
 import classes from "./Account.module.scss";
 import { EditProfile } from "@/modules/EditProfile";
 import Greeting from "./components/Greeting/Greeting";
@@ -35,8 +35,8 @@ export default function Account() {
         <main className={classes["account"]}>
             <Roadmap>
                 <Greeting 
-                    firstName={user?.firstName} 
-                    lastName={user?.lastName} 
+                    firstName={user?.firstName || ""} 
+                    lastName={user?.lastName || ""} 
                 />
             </Roadmap>
             <section className={classes["account-section"]}>
@@ -46,14 +46,7 @@ export default function Account() {
                         currentTab={currentTab}
                         onClick={changeTab}
                     />
-                    <EditProfile user={user ? user : {
-                        firstName: "",
-                        lastName: "",
-                        email: "",
-                        address: "",
-                        password: "",
-                        reviews: [],
-                    }} />
+                    <EditProfile user={user} />
                 </div>
             </section>
         </main>

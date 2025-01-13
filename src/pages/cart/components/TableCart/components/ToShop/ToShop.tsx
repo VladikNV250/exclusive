@@ -1,6 +1,6 @@
 import ButtonOutlined from "@/UI/buttons/ButtonOutlined/ButtonOutlined";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 export default function ToShop() {
     const { t } = useTranslation();

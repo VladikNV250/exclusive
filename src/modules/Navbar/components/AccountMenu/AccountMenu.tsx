@@ -10,15 +10,15 @@ import CancellationIcon from "@/assets/icons/cancel-one.svg?react";
 import Star from "@/assets/icons/reviews.svg?react";
 import LogoutIcon from "@/assets/icons/logout.svg?react";
 import { Link, useLocation, useNavigate } from "react-router";
-// import { useAppDispatch } from "@/hooks/redux";
-// import { userSlice } from "@/store/reducers/UserSlice";
+import { useAppDispatch } from "@/hooks/redux";
+import { userSlice } from "@/store/reducers/UserSlice";
 
 export default function AccountMenu() {
     const { t } = useTranslation();
     const { pathname } = useLocation();
     const navigate = useNavigate();
-    // const dispatch = useAppDispatch();
-    // const {logoutUser} = userSlice.actions;
+    const dispatch = useAppDispatch();
+    const {logoutUser} = userSlice.actions;
     const [isOpenMenu, setIsOpenMenu] = useState(false);
     const links = [
         {Icon: User, url: "/account", name: t("manage-account")},
@@ -28,7 +28,7 @@ export default function AccountMenu() {
     ]
 
     const handleClick = () => {
-        // dispatch(logoutUser());
+        dispatch(logoutUser());
         navigate("/");
     }
 

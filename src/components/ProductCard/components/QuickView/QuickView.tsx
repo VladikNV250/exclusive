@@ -7,10 +7,10 @@ import Heading from "@/UI/headers/Heading/Heading";
 import { ProductReviewStar } from "../ProductReviewStar/ProductReviewStar";
 import ButtonCompact from "@/UI/buttons/ButtonCompact/ButtonCompact";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import formatPrice from "@/helpers/formatPrice";
 import { useAppSelector } from "@/hooks/redux";
 import selectExchangeRate from "@/store/selectors/selectExchangeRate";
+import { Link } from "react-router";
 
 interface Props {
     isOpen: boolean;

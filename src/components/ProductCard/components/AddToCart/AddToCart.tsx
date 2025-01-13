@@ -2,17 +2,17 @@ import { useTranslation } from "react-i18next";
 import classes from "./AddToCart.module.scss";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import { cartSlice } from "@/store/reducers/CartSlice";
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CartMessage from "../CartMessage/CartMessage";
 import { IProduct } from "@/models/IProduct";
+import { Link } from "react-router";
 
 interface Props {
     id: IProduct["id"],
-    isInStock: boolean,
+    isInStock: IProduct["isInStock"],
 }
 
-export default function AddToCart({id, isInStock}: Props) {
+export default function AddToCart({id, isInStock = false}: Props) {
     const { t } = useTranslation();
     
     const [isOpen, setIsOpen] = useState(false);

@@ -1,9 +1,6 @@
 import classes from "./TableCart.module.scss";
-import { useState } from "react";
 import TableRowCart from "@/pages/cart/components/TableCart/components/TableRowCart/TableRowCart";
 import TableHeadCart from "@/pages/cart/components/TableCart/components/TableHeadCart/TableHeadCart";
-import monitor from "@/assets/products/gaming-monitor.png";
-import gamepad from "@/assets/products/gamepad.png";
 import ToShop from "./components/ToShop/ToShop";
 import CleanCartButton from "./components/CleanCartButton/CleanCartButton";
 import { useTranslation } from "react-i18next";

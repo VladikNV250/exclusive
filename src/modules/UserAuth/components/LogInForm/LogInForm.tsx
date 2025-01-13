@@ -5,16 +5,16 @@ import { useTranslation } from "react-i18next";
 import { ChangeEvent, FormEvent, useState } from "react";
 import Message from "@/components/Message/Message";
 import { useNavigate } from "react-router";
-// import { useAppDispatch, useAppSelector } from "@/hooks/redux";
-// import { fetchUserByEmail } from "@/store/reducers/ActionCreators";
-// import { userSlice } from "@/store/reducers/UserSlice";
+import { useAppDispatch, useAppSelector } from "@/hooks/redux";
+import { fetchUserByEmail } from "@/store/reducers/ActionCreators";
+import { userSlice } from "@/store/reducers/UserSlice";
 
 export default function LogInForm() {
     const { t } = useTranslation();
     const navigate = useNavigate();
-    // const dispatch = useAppDispatch();
-    // const {isLoading, error} = useAppSelector(state => state.userReducer);
-    // const {setUser} = userSlice.actions;
+    const dispatch = useAppDispatch();
+    const {error} = useAppSelector(state => state.userReducer);
+    const {setUser} = userSlice.actions;
     const [message, setMessage] = useState({text: "", isOpen: false});
     const [formData, setFormData] = useState({
         emailPhone: "",
@@ -42,23 +42,23 @@ export default function LogInForm() {
 
         const {emailPhone, password} = formData;
 
-        // try {
-        //     const user = await dispatch(fetchUserByEmail(emailPhone)).unwrap();
-        //     if (user) {
-        //         if (user.password === password) {
-        //             dispatch(setUser(user));
-        //             localStorage.setItem("user", user.id);
-        //             navigate("/");
-        //         } else {
-        //             showMessage("wrong-password-or-email");
-        //         }
-        //     } else {
-        //         showMessage("wrong-password-or-email");
-        //     }
-        // } catch (e) {
-        //     showMessage("Something went wrong..");
-        //     console.error(e, error);
-        // }
+        try {
+            const user = await dispatch(fetchUserByEmail(emailPhone)).unwrap();
+            if (user) {
+                if (user.password === password) {
+                    dispatch(setUser(user));
+                    localStorage.setItem("user", user.id || "");
+                    navigate("/");
+                } else {
+                    showMessage("wrong-password-or-email");
+                }
+            } else {
+                showMessage("wrong-password-or-email");
+            }
+        } catch (e) {
+            showMessage("Something went wrong..");
+            console.error(e, error);
+        }
     }
 
     return (

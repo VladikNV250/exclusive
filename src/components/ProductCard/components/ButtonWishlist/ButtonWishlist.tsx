@@ -1,8 +1,7 @@
-import { useRef } from "react";
 import classes from "./ButtonWishlist.module.scss";
 import ButtonCircle from "@/UI/buttons/ButtonCircle/ButtonCircle";
-import Heart from "@/assets/icons/heart-small.svg";
-import Trash from "@/assets/icons/trash.svg";
+import Heart from "@/assets/icons/heart-small.svg?react";
+import Trash from "@/assets/icons/trash.svg?react";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import { wishlistSlice } from "@/store/reducers/WishlistSlice";
 import { IProduct } from "@/models/IProduct";

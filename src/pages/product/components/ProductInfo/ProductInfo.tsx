@@ -13,8 +13,8 @@ import SpecialsList from "./components/SpecialsList/SpecialsList";
 
 import { IProduct } from "@/models/IProduct";
 
-// import { useAppSelector } from "@/hooks/redux";
-// import selectExchangeRate from "@/store/selectors/selectExchangeRate";
+import { useAppSelector } from "@/hooks/redux";
+import selectExchangeRate from "@/store/selectors/selectExchangeRate";
 import { useTranslation } from "react-i18next";
 
 interface Props {

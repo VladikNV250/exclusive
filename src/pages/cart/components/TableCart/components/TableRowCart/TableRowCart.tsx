@@ -6,8 +6,8 @@ import { productSlice } from "@/store/reducers/ProductSlice";
 import { useTranslation } from "react-i18next";
 import selectExchangeRate from "@/store/selectors/selectExchangeRate";
 import formatPrice from "@/helpers/formatPrice";
-import { Link } from "react-router-dom";
 import { cartSlice } from "@/store/reducers/CartSlice";
+import { Link } from "react-router";
 
 interface Props {
     product: IProduct;

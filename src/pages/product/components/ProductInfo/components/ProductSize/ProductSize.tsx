@@ -1,20 +1,19 @@
 import { useState } from "react";
 import classes from "./ProductSize.module.scss";
 import { useTranslation } from "react-i18next";
-import { Size } from "@/types/types";
-
+import { SizeType } from "@/models/IProduct";
 
 interface Props {
-    sizes: Size[];
-    currentSize?: Size;
+    sizes?: SizeType[];
+    currentSize?: SizeType;
 }
 
-export default function ProductSize({sizes}: Props) {
+export default function ProductSize({sizes = []}: Props) {
     const { t } = useTranslation(); 
-    const [currentSize, setCurrentSize] = useState<Size>("M")
-    if (sizes && !sizes.includes(currentSize)) setCurrentSize(sizes[0]);
+    const [currentSize, setCurrentSize] = useState<SizeType>("M")
+    if (!sizes.includes(currentSize)) setCurrentSize(sizes[0]);
 
-    if (sizes?.length > 1) return (
+    if (sizes.length > 1) return (
         <div className={classes["sizes-container"]}>
             {sizes && <h4 className={classes["sizes-title"]}>{t("size")}:</h4>}
             <div className={classes["sizes-buttons-container"]}>

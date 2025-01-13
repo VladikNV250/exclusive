@@ -1,5 +1,5 @@
 import classes from "./DetailsForm.module.scss";
-import FormInput from "./components/FormInput/FormInput";
+import FormInput from "../../components/FormInput/FormInput";
 import SaveCheckbox from "./components/SaveCheckbox/SaveCheckbox";
 import { useTranslation } from "react-i18next";
 
