@@ -32,7 +32,7 @@ export default function ProductList({products, mode = "slider"}: Props) {
                 />
             )}
             <CircleLoader loading={isLoading} />
-            {error.message && <div>Coudn't load goods :( Let's try reload the page</div>}
+            {error?.message && <div>Coudn't load goods :( Let's try reload the page</div>}
         </div>
     )
 }

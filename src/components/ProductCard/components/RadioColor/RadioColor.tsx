@@ -8,7 +8,7 @@ interface Props {
     isLoading?: boolean;
 }
 
-export function RadioColor({colors, name, onChange, isLoading = false}: Props) {
+export function RadioColor({colors, name, onChange = () => {}, isLoading = false}: Props) {
     const selectedColor = colors[0]
     const loadingMask: CSSProperties = {
         background: "#aaa",

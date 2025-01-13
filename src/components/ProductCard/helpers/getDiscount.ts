@@ -6,4 +6,5 @@ export default function getDiscount(price: number, oldPrice?: number): string {
         style: "percent"
     })
     if (oldPrice) return numberFormat.format(-(100 - ((price * 100) / oldPrice)) / 100);
+    return "";
 }

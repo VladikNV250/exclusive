@@ -15,9 +15,9 @@ export default function getTime({secondsLeft, days, hours, minutes}: Props): num
 
     
     if (minutes !== undefined) 
-        return Math.floor(secondsLeft - toSeconds(toMinutes(toHour(days))) - toSeconds(toMinutes(hours)) - toSeconds(minutes)); // get Seconds
+        return Math.floor(secondsLeft - toSeconds(toMinutes(toHour(days ?? 0))) - toSeconds(toMinutes(hours ?? 0)) - toSeconds(minutes ?? 0)); // get Seconds
     if (hours !== undefined) 
-        return Math.floor(totalMinutes - toMinutes(toHour(days)) - toMinutes(hours)); // get Minutes
+        return Math.floor(totalMinutes - toMinutes(toHour(days ?? 0)) - toMinutes(hours)); // get Minutes
     if (days !== undefined) 
         return Math.floor(totalHours - toHour(days)); // get Hours
     return Math.floor(totalHours / 24); // get Days

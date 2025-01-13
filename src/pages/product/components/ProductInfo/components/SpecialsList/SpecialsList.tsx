@@ -1,6 +1,6 @@
 import classes from "./SpecialsList.module.scss";
-import Delivery from "@/assets/icons/delivery.svg";
-import Return from "@/assets/icons/return.svg";
+import Delivery from "@/assets/icons/delivery.svg?react";
+import Return from "@/assets/icons/return.svg?react";
 import { useTranslation } from "react-i18next";
 
 export default function SpecialsList() {

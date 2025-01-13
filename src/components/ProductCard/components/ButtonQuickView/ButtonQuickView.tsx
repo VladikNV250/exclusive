@@ -1,6 +1,6 @@
 import classes from "./ButtonQuickView.module.scss";
 import ButtonCircle from "@/UI/buttons/ButtonCircle/ButtonCircle";
-import QuickViewIcon from "@/assets/icons/quick-view.svg";
+import QuickViewIcon from "@/assets/icons/quick-view.svg?react";
 import { useState } from "react";
 import QuickView from "../QuickView/QuickView";
 import { useAppSelector } from "@/hooks/redux";
@@ -16,7 +16,7 @@ export default function ButtonQuickView({id}: Props) {
     const openQuickView = () => { setIsOpenQuickView(!isOpenQuickView); }
     const product = useAppSelector(state => selectByIdProducts(state, id))
 
-    return (
+    if (product) return (
         <>
             <QuickView 
                 isOpen={isOpenQuickView} 
