@@ -5,7 +5,7 @@ import playstation from "@/assets/new-arrival/playstation.png";
 import perfume from "@/assets/new-arrival/perfume.png";
 import speakers from "@/assets/new-arrival/speakers.png";
 import woman from "@/assets/new-arrival/woman.png";
-import NewArrivalCard from "@/pages/home/components/NewArrival/UI/NewArrivalCard/NewArrivalCard";
+import NewArrivalCard from "./UI/NewArrivalCard/NewArrivalCard";
 import { useTranslation } from "react-i18next";
 
 export default function NewArrival() {

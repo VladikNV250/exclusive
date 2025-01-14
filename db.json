@@ -1,0 +1,989 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Small BookSelf",
+      "description": "Small bookshelf.",
+      "price": 360,
+      "images": {
+        "default": [
+          "/images/goods/2.png"
+        ]
+      },
+      "tags": [
+        "furniture",
+        "best-selling"
+      ],
+      "category": {
+        "name": "home-lifestyle",
+        "link": "/home&lifestyle"
+      },
+      "isInStock": true,
+      "rating": {
+        "1": 2,
+        "2": 1,
+        "3": 2,
+        "4": 5,
+        "5": 7,
+        "0.5": 1,
+        "1.5": 0,
+        "2.5": 1,
+        "3.5": 3,
+        "4.5": 4
+      }
+    },
+    {
+      "id": "2",
+      "name": "IPS LCD Gaming Monitor",
+      "description": "IPS LCD gaming monitor.",
+      "price": 370,
+      "oldPrice": 530,
+      "images": {
+        "default": [
+          "/images/goods/19.png"
+        ]
+      },
+      "tags": [
+        "monitor",
+        "gaming",
+        "flash-sales"
+      ],
+      "category": {
+        "name": "electronics",
+        "link": "/electronics"
+      },
+      "isInStock": true,
+      "rating": {
+        "1": 1,
+        "2": 0,
+        "3": 2,
+        "4": 6,
+        "5": 10,
+        "0.5": 0,
+        "1.5": 1,
+        "2.5": 2,
+        "3.5": 1,
+        "4.5": 5
+      }
+    },
+    {
+      "id": "3",
+      "name": "S-Series Comfort Chair",
+      "description": "S-Series comfort chair.",
+      "price": 375,
+      "oldPrice": 500,
+      "images": {
+        "default": [
+          "/images/goods/6.png"
+        ]
+      },
+      "tags": [
+        "furniture",
+        "flash-sales"
+      ],
+      "category": {
+        "name": "home-lifestyle",
+        "link": "/home&lifestyle"
+      },
+      "isInStock": true,
+      "rating": {
+        "1": 2,
+        "2": 1,
+        "3": 2,
+        "4": 5,
+        "5": 8,
+        "0.5": 0,
+        "1.5": 2,
+        "2.5": 2,
+        "3.5": 4,
+        "4.5": 5
+      },
+      "quantity": 1
+    },
+    {
+      "id": "4",
+      "name": "Breed Dry Dog Food",
+      "description": "Breed dry dog food.",
+      "price": 100,
+      "images": {
+        "default": [
+          "/images/goods/10.png",
+          "/images/goods/10.png",
+          "/images/goods/10.png",
+          "/images/goods/10.png"
+        ]
+      },
+      "tags": [
+        "petfood",
+        "explore"
+      ],
+      "category": {
+        "name": "groceries-pets",
+        "link": "/groceries&pets"
+      },
+      "isInStock": true,
+      "rating": {
+        "1": 2,
+        "2": 0,
+        "3": 2,
+        "4": 6,
+        "5": 8,
+        "0.5": 1,
+        "1.5": 1,
+        "2.5": 1,
+        "3.5": 3,
+        "4.5": 4
+      }
+    },
+    {
+      "id": "5",
+      "name": "CANON EOS DSLR Camera",
+      "description": "CANON EOS DSLR camera.",
+      "price": 360,
+      "images": {
+        "default": [
+          "/images/goods/3.png"
+        ]
+      },
+      "tags": [
+        "camera",
+        "explore"
+      ],
+      "category": {
+        "name": "electronics",
+        "link": "/electronics"
+      },
+      "isInStock": true,
+      "rating": {
+        "1": 1,
+        "2": 2,
+        "3": 1,
+        "4": 4,
+        "5": 8,
+        "0.5": 0,
+        "1.5": 1,
+        "2.5": 0,
+        "3.5": 10,
+        "4.5": 3
+      },
+      "quantity": 1
+    },
+    {
+      "id": "6",
+      "name": "ASUS Pro Series 15.6\" FHD",
+      "description": "ASUS Pro Series 15.6\" FHD laptop.",
+      "price": 700,
+      "images": {
+        "default": [
+          "/images/goods/23.png"
+        ]
+      },
+      "tags": [
+        "notebook",
+        "explore"
+      ],
+      "category": {
+        "name": "electronics",
+        "link": "/electronics"
+      },
+      "isInStock": true,
+      "rating": {
+        "1": 2,
+        "2": 1,
+        "3": 2,
+        "4": 6,
+        "5": 9,
+        "0.5": 0,
+        "1.5": 0,
+        "2.5": 1,
+        "3.5": 1,
+        "4.5": 4
+      }
+    },
+    {
+      "id": "7",
+      "name": "Curology Product Set",
+      "description": "Curology product set.",
+      "price": 500,
+      "images": {
+        "default": [
+          "/images/goods/9.png"
+        ]
+      },
+      "tags": [
+        "medicine",
+        "health",
+        "beauty",
+        "explore"
+      ],
+      "category": {
+        "name": "health-beauty",
+        "link": "/health&beauty"
+      },
+      "isInStock": true,
+      "rating": {
+        "1": 1,
+        "2": 2,
+        "3": 2,
+        "4": 5,
+        "5": 8,
+        "0.5": 1,
+        "1.5": 0,
+        "2.5": 1,
+        "3.5": 2,
+        "4.5": 4
+      }
+    },
+    {
+      "id": "8",
+      "name": "Kids Electric Car",
+      "description": "Kids electric car.",
+      "price": 960,
+      "images": {
+        "default": [
+          "/images/goods/5.png"
+        ],
+        "#4D78BD": [
+          "/images/goods/4.png"
+        ]
+      },
+      "tags": [
+        "toy",
+        "explore"
+      ],
+      "category": {
+        "name": "babys-toys",
+        "link": "/babys&toys"
+      },
+      "isNew": true,
+      "isInStock": true,
+      "availableColors": [
+        "#FE4B4F",
+        "#4D78BD"
+      ],
+      "rating": {
+        "1": 2,
+        "2": 1,
+        "3": 1,
+        "4": 5,
+        "5": 11,
+        "0.5": 0,
+        "1.5": 1,
+        "2.5": 2,
+        "3.5": 2,
+        "4.5": 5
+      },
+      "quantity": 1
+    },
+    {
+      "id": "9",
+      "name": "AK-900 Wired Keyboard",
+      "description": "AK-900 wired keyboard.",
+      "price": 960,
+      "oldPrice": 1479,
+      "images": {
+        "default": [
+          "/images/goods/22.png"
+        ]
+      },
+      "tags": [
+        "keyboard",
+        "gaming",
+        "flash-sales"
+      ],
+      "category": {
+        "name": "electronics",
+        "link": "/electronics"
+      },
+      "isInStock": true,
+      "rating": {
+        "1": 1,
+        "2": 0,
+        "3": 1,
+        "4": 6,
+        "5": 10,
+        "0.5": 0,
+        "1.5": 2,
+        "2.5": 2,
+        "3.5": 3,
+        "4.5": 4
+      }
+    },
+    {
+      "id": "10",
+      "name": "Quilted Satin Jacket",
+      "description": "Quilted satin jacket.",
+      "price": 660,
+      "images": {
+        "default": [
+          "/images/goods/20.png"
+        ],
+        "#FCE557": [
+          "/images/goods/21.png"
+        ]
+      },
+      "tags": [
+        "clothes-man",
+        "explore"
+      ],
+      "category": {
+        "name": "mans-fashion",
+        "link": "/man"
+      },
+      "isInStock": true,
+      "availableColors": [
+        "#1D3133",
+        "#FCE557"
+      ],
+      "rating": {
+        "1": 1,
+        "2": 2,
+        "3": 2,
+        "4": 5,
+        "5": 7,
+        "0.5": 0,
+        "1.5": 1,
+        "2.5": 0,
+        "3.5": 2,
+        "4.5": 4
+      }
+    },
+    {
+      "id": "11",
+      "name": "GP11 Shooter USB Gamepad",
+      "description": "GP11 Shooter USB gamepad.",
+      "price": 660,
+      "images": {
+        "default": [
+          "/images/goods/17.png"
+        ],
+        "#F75C4A": [
+          "/images/goods/18.png"
+        ]
+      },
+      "tags": [
+        "gamepad",
+        "gaming",
+        "explore",
+        "recommendation"
+      ],
+      "category": {
+        "name": "electronics",
+        "link": "/electronics"
+      },
+      "isNew": true,
+      "isInStock": true,
+      "availableColors": [
+        "#000000",
+        "#F75C4A"
+      ],
+      "rating": {
+        "1": 1,
+        "2": 1,
+        "3": 3,
+        "4": 4,
+        "5": 6,
+        "0.5": 1,
+        "1.5": 0,
+        "2.5": 2,
+        "3.5": 1,
+        "4.5": 5
+      }
+    },
+    {
+      "id": "12",
+      "name": "HAVIT HV-G92 Gamepad",
+      "description": "HAVIT HV-G92 gamepad.",
+      "price": 120,
+      "oldPrice": 200,
+      "images": {
+        "default": [
+          "/images/goods/11.png"
+        ]
+      },
+      "tags": [
+        "gamepad",
+        "flash-sales"
+      ],
+      "category": {
+        "name": "electronics",
+        "link": "/electronics"
+      },
+      "isInStock": true,
+      "rating": {
+        "1": 0,
+        "2": 2,
+        "3": 4,
+        "4": 3,
+        "5": 5,
+        "0.5": 2,
+        "1.5": 1,
+        "2.5": 1,
+        "3.5": 2,
+        "4.5": 2
+      }
+    },
+    {
+      "id": "13",
+      "name": "The north coat",
+      "description": "The north coat.",
+      "price": 260,
+      "oldPrice": 360,
+      "images": {
+        "default": [
+          "/images/goods/7.png"
+        ]
+      },
+      "tags": [
+        "clothes-woman",
+        "best-selling",
+        "flash-sales"
+      ],
+      "category": {
+        "name": "womens-fashion",
+        "link": "/woman"
+      },
+      "isInStock": true,
+      "rating": {
+        "1": 1,
+        "2": 1,
+        "3": 3,
+        "4": 6,
+        "5": 7,
+        "0.5": 1,
+        "1.5": 0,
+        "2.5": 1,
+        "3.5": 3,
+        "4.5": 4
+      },
+      "quantity": 1
+    },
+    {
+      "id": "14",
+      "name": "Gucci duffle bag",
+      "description": "Gucci duffle bag.",
+      "price": 960,
+      "oldPrice": 1160,
+      "images": {
+        "default": [
+          "/images/goods/1.png"
+        ]
+      },
+      "tags": [
+        "bag-woman",
+        "best-selling",
+        "flash-sales"
+      ],
+      "category": {
+        "name": "womens-fashion",
+        "link": "/woman"
+      },
+      "isInStock": true,
+      "rating": {
+        "1": 1,
+        "2": 0,
+        "3": 3,
+        "4": 5,
+        "5": 9,
+        "0.5": 0,
+        "1.5": 1,
+        "2.5": 1,
+        "3.5": 2,
+        "4.5": 4
+      },
+      "quantity": 1
+    },
+    {
+      "id": "15",
+      "name": "RGB liquid CPU Cooler",
+      "description": "RGB liquid CPU cooler.",
+      "price": 160,
+      "oldPrice": 170,
+      "images": {
+        "default": [
+          "/images/goods/8.png"
+        ]
+      },
+      "tags": [
+        "cooler",
+        "best-selling",
+        "flash-sales"
+      ],
+      "category": {
+        "name": "electronics",
+        "link": "/electronics"
+      },
+      "rating": {
+        "1": 1,
+        "2": 2,
+        "3": 2,
+        "4": 4,
+        "5": 8,
+        "0.5": 1,
+        "1.5": 0,
+        "2.5": 1,
+        "3.5": 3,
+        "4.5": 4
+      },
+      "quantity": 1
+    },
+    {
+      "id": "16",
+      "name": "Jr. Zoom Soccer Cleats",
+      "description": "Jr. Zoom soccer cleats.",
+      "price": 1160,
+      "images": {
+        "default": [
+          "/images/goods/25.png"
+        ],
+        "#eeeeee": [
+          "/images/goods/24.png"
+        ]
+      },
+      "tags": [
+        "shoes",
+        "explore"
+      ],
+      "category": {
+        "name": "sports-outdoor",
+        "link": "/sport&outdoor"
+      },
+      "isInStock": true,
+      "availableColors": [
+        "#EAFD7B",
+        "#eeeeee"
+      ],
+      "rating": {
+        "1": 2,
+        "2": 1,
+        "3": 2,
+        "4": 5,
+        "5": 7,
+        "0.5": 1,
+        "1.5": 1,
+        "2.5": 1,
+        "3.5": 3,
+        "4.5": 4
+      }
+    },
+    {
+      "id": "17",
+      "name": "ASUS FHD Gaming Laptop",
+      "description": "ASUS FHD gaming laptop.",
+      "price": 960,
+      "oldPrice": 1160,
+      "images": {
+        "default": [
+          "/images/goods/23.png"
+        ]
+      },
+      "tags": [
+        "notebook",
+        "recommendation",
+        "flash-sales"
+      ],
+      "category": {
+        "name": "electronics",
+        "link": "/electronics"
+      },
+      "isInStock": true,
+      "rating": {
+        "1": 1,
+        "2": 1,
+        "3": 2,
+        "4": 6,
+        "5": 9,
+        "0.5": 0,
+        "1.5": 0,
+        "2.5": 1,
+        "3.5": 1,
+        "4.5": 4
+      }
+    },
+    {
+      "id": "18",
+      "name": "ThunderBolt 27\" Curved Gaming Screen",
+      "description": "ThunderBolt 27\" curved gaming screen.",
+      "price": 1160,
+      "images": {
+        "default": [
+          "/images/goods/19.png"
+        ]
+      },
+      "tags": [
+        "monitor",
+        "gaming",
+        "recommendation"
+      ],
+      "category": {
+        "name": "electronics",
+        "link": "/electronics"
+      },
+      "isInStock": true,
+      "rating": {
+        "1": 1,
+        "2": 0,
+        "3": 2,
+        "4": 6,
+        "5": 10,
+        "0.5": 0,
+        "1.5": 1,
+        "2.5": 2,
+        "3.5": 1,
+        "4.5": 5
+      }
+    },
+    {
+      "id": "19",
+      "name": "REAL-EL Precision Performance Keyboard",
+      "description": "REAL-EL Precision Performance keyboard.",
+      "price": 200,
+      "images": {
+        "default": [
+          "/images/goods/22.png"
+        ]
+      },
+      "tags": [
+        "keyboard",
+        "gaming",
+        "recommendation"
+      ],
+      "category": {
+        "name": "electronics",
+        "link": "/electronics"
+      },
+      "isInStock": true,
+      "rating": {
+        "1": 0,
+        "2": 2,
+        "3": 4,
+        "4": 3,
+        "5": 5,
+        "0.5": 2,
+        "1.5": 1,
+        "2.5": 1,
+        "3.5": 2,
+        "4.5": 2
+      }
+    },
+    {
+      "id": "20",
+      "name": "Playstation 5 Controller Skin High",
+      "description": "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
+      "price": 192,
+      "images": {
+        "default": [
+          "/images/goods/12.png",
+          "/images/goods/13.png",
+          "/images/goods/14.png",
+          "/images/goods/15.png",
+          "/images/goods/16.png"
+        ],
+        "#000000": [
+          "/images/goods/12.png",
+          "/images/goods/13.png",
+          "/images/goods/14.png",
+          "/images/goods/15.png",
+          "/images/goods/16.png"
+        ]
+      },
+      "tags": [
+        "gamepad",
+        "gaming",
+        "flash-sales"
+      ],
+      "category": {
+        "name": "electronics",
+        "link": "/electronics"
+      },
+      "isInStock": true,
+      "availableColors": [
+        "#dddddd",
+        "#000000"
+      ],
+      "rating": {
+        "1": 2,
+        "2": 2,
+        "3": 3,
+        "4": 5,
+        "5": 7,
+        "0.5": 1,
+        "1.5": 0,
+        "2.5": 1,
+        "3.5": 2,
+        "4.5": 4
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": "1vux",
+      "firstName": "Vlad",
+      "lastName": "Nemichev",
+      "email": "vladiknemichev@gmail.com",
+      "address": "Kingston, 5236, United State",
+      "password": "123456",
+      "reviews": [
+        {
+          "product_id": "1",
+          "score": 4.5
+        },
+        {
+          "product_id": "2",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "2ghi",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "johndoe@gmail.com",
+      "address": "Kingston, 3000, United State",
+      "password": "123456",
+      "reviews": [
+        {
+          "product_id": "3",
+          "score": 5
+        },
+        {
+          "product_id": "4",
+          "score": 2.5
+        },
+        {
+          "product_id": "5",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "id": "3asd",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "email": "janedoe@gmail.com",
+      "address": "Kingston, 8080, United State",
+      "password": "123456",
+      "reviews": [
+        {
+          "product_id": "6",
+          "score": 3.5
+        },
+        {
+          "product_id": "7",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "id": "aa3c",
+      "firstName": "Andrew",
+      "lastName": "Odinsson",
+      "address": "lviv",
+      "email": "vlad@gmail.com",
+      "password": "1111",
+      "reviews": [
+        {
+          "product_id": "8",
+          "score": 2
+        },
+        {
+          "product_id": "9",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "7a8e",
+      "firstName": "владік",
+      "email": "vladiknemichevv@gmail.com",
+      "address": "",
+      "password": "Hsafju@4",
+      "reviews": [
+        {
+          "product_id": "10",
+          "score": 4.5
+        },
+        {
+          "product_id": "11",
+          "score": 5
+        }
+      ]
+    },
+    {
+      "id": "796a",
+      "firstName": "Nikolay",
+      "lastName": "Kolbaskov",
+      "email": "nikolaykolbaskov@gmail.com",
+      "address": "",
+      "password": "Hsafju@4",
+      "reviews": [
+        {
+          "product_id": "12",
+          "score": 3.5
+        },
+        {
+          "product_id": "13",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "id": "6b35",
+      "firstName": "Nikolay",
+      "lastName": "Kolbaskov",
+      "email": "nikolaykolbaskovx@gmail.com",
+      "address": "",
+      "password": "Hsafju@4",
+      "reviews": [
+        {
+          "product_id": "14",
+          "score": 2.5
+        },
+        {
+          "product_id": "15",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "21ab",
+      "firstName": "Lena",
+      "lastName": "Holovach",
+      "email": "mamutrahal@gmail.com",
+      "address": "Lviv, Striy region, Velyki Didushychi",
+      "password": "Hsafju@4",
+      "reviews": [
+        {
+          "product_id": "16",
+          "score": 4
+        },
+        {
+          "product_id": "17",
+          "score": 4.5
+        }
+      ]
+    },
+    {
+      "id": "9cc7",
+      "firstName": "Rahal",
+      "lastName": "Mamut",
+      "email": "mamulrahat@gmail.com",
+      "address": "",
+      "password": "Hsafju@4",
+      "reviews": [
+        {
+          "product_id": "18",
+          "score": 5
+        },
+        {
+          "product_id": "19",
+          "score": 3.5
+        }
+      ]
+    },
+    {
+      "id": "882b",
+      "firstName": "Adolf",
+      "lastName": "Hitler",
+      "email": "adolfhitler@gmail.com",
+      "address": "",
+      "password": "sfdad@5H",
+      "reviews": [
+        {
+          "product_id": "20",
+          "score": 1
+        },
+        {
+          "product_id": "1",
+          "score": 2.5
+        },
+        {
+          "product_id": "12",
+          "score": 3.5
+        },
+        {
+          "product_id": "13",
+          "score": 3
+        },
+        {
+          "product_id": "5",
+          "score": 5
+        },
+        {
+          "product_id": "3",
+          "score": 3.5
+        },
+        {
+          "product_id": "15",
+          "score": 5
+        },
+        {
+          "product_id": "8",
+          "score": 5
+        },
+        {
+          "product_id": "14",
+          "score": 5
+        }
+      ]
+    },
+    {
+      "id": "721c",
+      "firstName": "Joseph",
+      "lastName": "Stalin",
+      "email": "josephstalin@mail.ru",
+      "address": "",
+      "password": "josePH@2",
+      "reviews": [
+        {
+          "product_id": "2",
+          "score": 3
+        },
+        {
+          "product_id": "3",
+          "score": 4.5
+        },
+        {
+          "product_id": "13",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "id": "d56f",
+      "firstName": "Volodymyr",
+      "lastName": "Nemichev",
+      "email": "volodymyrnemichev@gmail.com",
+      "address": "",
+      "password": "volodiA2016^",
+      "reviews": [
+        {
+          "product_id": "4",
+          "score": 5
+        },
+        {
+          "product_id": "5",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "id": "6563",
+      "firstName": "Roman",
+      "lastName": "Topor",
+      "email": "romansinyak@gmail.com",
+      "address": "",
+      "password": "Romaha@1",
+      "reviews": []
+    },
+    {
+      "id": "0cad",
+      "firstName": "NewUser",
+      "lastName": "",
+      "email": "user@gmail.com",
+      "address": "",
+      "password": "hDsonki4@",
+      "reviews": []
+    }
+  ]
+}

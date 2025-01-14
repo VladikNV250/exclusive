@@ -48,7 +48,7 @@ export default function TableRowCart({product}: Props) {
                             className={classes["item-image"]}
                         />
                     </div>
-                    <Link to={`/${id}`} className={classes["item-name"]}>
+                    <Link to={`/product/${id}`} className={classes["item-name"]}>
                         {name}
                     </Link>
                 </div>
