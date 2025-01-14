@@ -70,9 +70,9 @@ export function EditProfile({user}: Props) {
 
         const newUser: IUser = {
             id: user?.id,
-            firstName: firstName ?? user?.firstName ?? "",
+            firstName: firstName || user?.firstName || "",
             lastName,
-            email: email ?? user?.email ?? "",
+            email: email || user?.email || "",
             address,
             password: user?.password ?? "",   
             reviews: user?.reviews ?? [],        
@@ -129,7 +129,7 @@ export function EditProfile({user}: Props) {
                         onChange={handleChange}
                         label={t("label-last-name")}
                         name="lastName"
-                        placeholder={user?.lastName ?? t("placeholder-last-name")}
+                        placeholder={user?.lastName || t("placeholder-last-name")}
                     />
                 </div>
                 <div className={classes["inputs-container__grid"]}>
@@ -144,7 +144,7 @@ export function EditProfile({user}: Props) {
                         onChange={handleChange}
                         label={t("label-address")}
                         name="address"
-                        placeholder={user?.address ?? t("placeholder-address")}
+                        placeholder={user?.address || t("placeholder-address")}
                     />
                 </div>
                 <div className={classes["inputs-container__flex"]}>

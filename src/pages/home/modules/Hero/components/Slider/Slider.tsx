@@ -1,7 +1,6 @@
 import CirclePagination from "@/UI/paginations/CirclePagination/CirclePagination";
 import classes from "./Slider.module.scss";
 import { useCallback, useEffect, useRef, useState } from "react";
-import SlideType1 from "./components/SlideType1/SlideType1";
 import iphone from "@/assets/slider/iphone.jpg";
 import apple from "@/assets/slider/apple.png";
 import samsung from "@/assets/slider/samsung.png";
@@ -13,6 +12,7 @@ import videocard from "@/assets/slider/videocard.png";
 import galaxy from "@/assets/slider/galaxy.png";
 import redmi from "@/assets/slider/redmi.png";
 import { useTranslation } from "react-i18next";
+import SlideTypeOne from "./components/SlideTypeOne/SlideTypeOne";
 
 
 export function Slider() {
@@ -47,7 +47,7 @@ export function Slider() {
     return (
         <div className={classes["slider"]}>
             <div className={classes["slider-container"]}>
-                <SlideType1
+                <SlideTypeOne
                     logo={xiaomi}
                     image={redmi}
                     title={{
@@ -56,7 +56,7 @@ export function Slider() {
                     }}
                     isSelected={currentItem == 1}
                 />
-                <SlideType1
+                <SlideTypeOne
                     logo={samsung}
                     image={galaxy}
                     title={{
@@ -65,7 +65,7 @@ export function Slider() {
                     }}
                     isSelected={currentItem == 2}
                 />
-                <SlideType1 
+                <SlideTypeOne 
                     logo={apple}
                     image={iphone}
                     title={{
@@ -74,7 +74,7 @@ export function Slider() {
                     }}
                     isSelected={currentItem == 3}
                 />
-                <SlideType1
+                <SlideTypeOne
                     logo={nvidia}
                     image={videocard}
                     title={{
@@ -83,7 +83,7 @@ export function Slider() {
                     }}
                     isSelected={currentItem == 4}
                 />
-                <SlideType1 
+                <SlideTypeOne 
                     logo={hp}
                     image={laptop}
                     title={{

@@ -1,5 +1,5 @@
 import Heading from "@/UI/headers/Heading/Heading";
-import classes from "./SlideType1.module.scss";
+import classes from "./SlideTypeOne.module.scss";
 import Arrow from "@/assets/icons/arrow-right.svg?react";
 import { useTranslation } from "react-i18next";
 
@@ -13,7 +13,7 @@ interface Props {
     isSelected: boolean;
 }
 
-export default function SlideType1({logo, title, image, isSelected = false}: Props) {
+export default function SlideTypeOne({logo, title, image, isSelected = false}: Props) {
     const { t } = useTranslation();
     const selectedClass = isSelected ? classes["slide-container__selected"] : "";
 

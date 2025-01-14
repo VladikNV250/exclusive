@@ -1,11 +1,11 @@
 import WishlistItems from "@/pages/wishlist/components/WishlistItems/WishlistItems";
-import JustForYou from "@/pages/wishlist/components/ForUserItems/ForUserItems";
+import ForUserItems from "./components/ForUserItems/ForUserItems";
 
 export default function Wishlist() {
     return (
         <main>
             <WishlistItems />
-            <JustForYou />
+            <ForUserItems />
         </main>
     )
 }
