@@ -8,10 +8,11 @@
         &__full {
             color: #FFAD33;
             path { fill-opacity: 1; }
-            // path:hover {
-            //     fill-opacity: 1;
-            //     color: #FFAD33;
-            // }
+            path:hover {
+                fill-opacity: 1;
+                color: #FFAD33;
+                cursor: pointer;
+            }
         }
         &__half {
             color: #FFAD33;
@@ -20,11 +21,13 @@
             path.can-review:hover {
                 fill-opacity: 1;
                 color: #FFAD33;
+                cursor: pointer;
             }
         }
         path.can-review:hover {
             fill-opacity: 1;
             color: #FFAD33;
+            cursor: pointer;
         }
     }
     &-container {

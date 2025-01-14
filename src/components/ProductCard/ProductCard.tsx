@@ -3,7 +3,6 @@ import classes from "./ProductCard.module.scss";
 import { useState } from "react";
 
 import Heading from "@/UI/headers/Heading/Heading";
-import CommonLoader from "@/UI/loaders/CircleLoader/CircleLoader";
 import { ProductTag } from "./components/ProductTag/ProductTag";
 import ButtonWishlist from "./components/ButtonWishlist/ButtonWishlist";
 import ButtonQuickView from "./components/ButtonQuickView/ButtonQuickView";
@@ -20,6 +19,7 @@ import { useTranslation } from "react-i18next";
 
 import defaultPlaceholder from "@/assets/default-placeholder.png";
 import { Link } from "react-router";
+import CircleLoader from "@/UI/loaders/CircleLoader/CircleLoader";
 
 interface Props {
     id              : IProduct["id"],
@@ -47,7 +47,7 @@ export function ProductCard({id, images, name, price, oldPrice, isInStock, isNew
                 <div className={classes["item-background"]}>
                     {isLoading && 
                     <div className={classes["loader-container"]}>
-                        <CommonLoader loading={isLoading} />
+                        <CircleLoader loading={isLoading} />
                     </div>}
                     <Link to={`/${id}`} className={classes["background-link"]}>
                         <img 
@@ -75,7 +75,7 @@ export function ProductCard({id, images, name, price, oldPrice, isInStock, isNew
                 <AddToCart id={id} isInStock={isInStock} />
             </div>
             <div className={classes["product-body"]}>
-                <Link to={`/${id}`}>
+                <Link to={`/product/${id}`}>
                     <Heading isLoading={isLoading} level="h6" className={classes["product-name"]}>
                         {name}
                     </Heading>

@@ -22,7 +22,7 @@ export default function Product() {
     const { addRoute } = routeSlice.actions;
     dispatch(addRoute([
         {name: t(product?.category?.name || ""), link: product?.category?.href || "", level: 1},
-        {name: product?.name || "", link: `/${productID}`, level: 2}
+        {name: product?.name || "", link: `/product/${productID}`, level: 2}
     ]))
 
     return (
@@ -34,7 +34,7 @@ export default function Product() {
                     <ProductGallery images={product.images.default} />
                     <ProductInfo product={product} />
                 </div>
-                <RelatedProducts tags={product?.tags || []} id={product?.id} />
+                <RelatedProducts tags={product.tags || []} id={product.id} />
             </section>
             :
             <div>Can't load a product</div>}

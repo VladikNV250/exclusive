@@ -21,8 +21,12 @@ export const fetchProductByName = createAsyncThunk(
     'product/fetchByName',
     async (name: IProduct["name"], thunkAPI) => {
         try {
-            const response = await axios.get<IProduct[]>(`http://192.168.1.3:3000/products?name=${name}`);
-            return response.data;
+            if (name) {
+                const response = await axios.get<IProduct[]>(`http://192.168.1.3:3000/products?name=${name}`);
+                return response.data;
+
+            }
+            return [];
         } catch (e) {
             return thunkAPI.rejectWithValue(`Couldn't search a product ${e}`);
         }

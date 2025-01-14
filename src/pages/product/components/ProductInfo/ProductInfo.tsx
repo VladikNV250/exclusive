@@ -50,11 +50,11 @@ export function ProductInfo({product}: Props) {
             />
             <div className={classes["horizontal-line"]} />
             <ProductColors colors={availableColors} />
-            <ProductSize sizes={size} />
+            <ProductSize sizes={size ?? []} />
             <div className={classes["buttons-container"]}>
                 <ProductQuantity 
                     id={id}
-                    defaultQuantity={quantity ? quantity : 1} 
+                    defaultQuantity={quantity ?? 1} 
                 />
                 <BuyNow id={id} isInStock={isInStock} />
                 <AddToWishlist id={id} />

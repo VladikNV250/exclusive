@@ -1,3 +1,4 @@
+import classes from "./Search.module.scss";
 
 import Roadmap from "@/modules/Roadmap/Roadmap";
 import ProductList from "@/components/ProductList";
@@ -14,14 +15,14 @@ import { IProduct } from "@/models/IProduct";
 export default function Search() {
     const { t } = useTranslation();
     const [products, setProducts] = useState<IProduct[]>([]);
-    const { searchedProductName = "" } = useParams(); 
+    const { query = "" } = useParams(); 
     const dispatch = useAppDispatch();
     const {addRoute} = routeSlice.actions;
 
     useEffect(() => {
         (async () => {
             try {
-                const searchedProducts = await dispatch(fetchProductByName(searchedProductName)).unwrap();
+                const searchedProducts = await dispatch(fetchProductByName(query)).unwrap();
                 if (searchedProducts) setProducts(searchedProducts);
             } catch (e) {
                 console.error(e);
@@ -29,17 +30,19 @@ export default function Search() {
         })()
         
         dispatch(addRoute([{
-            name: searchedProductName, link: `/search/${searchedProductName}`, level: 1,
+            name: query, link: `/search/${query}`, level: 1,
         }]))
-    }, [searchedProductName, addRoute, dispatch]);
+    }, [query, addRoute, dispatch]);
 
     return (
         <main>
             <Roadmap />
-            <section>
-                {products
-                ? <ProductList products={products} mode="all-products" />
-                : <Heading level="h2">{t("nothing-searched")}</Heading>}
+            <section className={classes["search-section"]}>
+                <div className={classes["search-container"]}>
+                    {products.length > 0
+                    ? <ProductList products={products} mode="all-products" />
+                    : <Heading level="h2">{t("nothing-searched")}</Heading>}
+                </div>
             </section>
         </main>
     )

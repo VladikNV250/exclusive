@@ -52,7 +52,7 @@ export default function QuickView({isOpen, setIsOpen, product}: Props) {
                             rating={product.rating}
                         />
                     </div>
-                    <Link to={`/${product.id}`}>
+                    <Link to={`/product/${product.id}`}>
                         <ButtonCompact>
                             {t("view-more")}
                         </ButtonCompact>
