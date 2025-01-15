@@ -6,6 +6,52 @@
 
 **Exclusive** is an online store offering a wide range of goods for various genres. In this project, I explored new technologies such as Redux Toolkit, React Router, json-server, i18n, webpack, vite, and more.
 
+## Запуск Проєкту / Getting Started
+
+Щоб запустити цей проєкт локально, виконайте наступні кроки:
+
+1. Клонувати репозиторій:
+    ```bash
+    git clone https://github.com/VladikNV250/exclusive.git
+    ```
+
+2. Перейти до теки проєкту:
+    ```bash
+    cd exclusive
+    ```
+
+3. Інсталювати залежності:
+    ```bash
+    npm install
+    ```
+
+4. Запустити розробницький сервер:
+    ```bash
+    npm run start
+    ```
+
+To run this project locally, follow these steps:
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/VladikNV250/exclusive.git
+    ```
+
+2. Navigate to the project directory:
+    ```bash
+    cd exclusive
+    ```
+
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+
+4. Run the development server:
+    ```bash
+    npm run start
+    ```
+
 ## Реалізований Функціонал / Features Implemented
 
 Я створив усі необхідні сторінки, передбачені макетом, і додав функціонал пошуку товарів через REST API. Користувачі можуть додавати товари до списку бажань, переглядати наявні товари та видаляти їх зі списку. Також є функціональний кошик, що зберігає товари, підраховує загальну суму, дозволяє змінювати кількість товарів та очищати кошик при необхідності.
