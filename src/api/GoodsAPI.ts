@@ -4,7 +4,7 @@ import axios from "axios";
 export const goodsAPI = {
     fetchAllProducts: async () => {
         try {
-            const response = await axios.get<IProduct[]>("https://json-server-liard-two.vercel.app/products");
+            const response = await axios.get<IProduct[]>("http://localhost:3000/products");
             return response.data;
         } catch (e) {
             return e;
@@ -12,7 +12,7 @@ export const goodsAPI = {
     },
     fetchProductByName: async (name: IProduct["name"]) => {
         try {
-            const response = await axios.get<IProduct[]>(`https://json-server-liard-two.vercel.app/products`, {
+            const response = await axios.get<IProduct[]>(`http://localhost:3000/products`, {
                 params: {
                     name
                 }
@@ -24,7 +24,7 @@ export const goodsAPI = {
     },
     fetchProduct: async (filter?: {[key: string]: string | number | boolean | null }) => {
         try {
-            const response = await axios.get<IProduct[]>(`https://json-server-liard-two.vercel.app/products?`, {
+            const response = await axios.get<IProduct[]>(`http://localhost:3000/products?`, {
                 params: {
                     ...filter
                 }
@@ -36,7 +36,7 @@ export const goodsAPI = {
     },
     editProduct: async (product: IProduct) => {
         try {
-            const response = await axios.put<IProduct>(`https://json-server-liard-two.vercel.app/${product.id}`, product);
+            const response = await axios.put<IProduct>(`http://localhost:3000/${product.id}`, product);
             return response.data;
         } catch (e) {
             console.error(e);

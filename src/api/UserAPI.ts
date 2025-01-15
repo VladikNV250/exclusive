@@ -1,7 +1,7 @@
 import { IUser } from "@/models/IUser";
 import axios from "axios"
 
-axios.defaults.baseURL = "http://192.168.1.3:3000";
+axios.defaults.baseURL = "http://localhost:3000";
 export const userAPI = {
     fetchByEmail: async (email: string) => {
         const response = await axios.get<IUser[]>(`/users?email=${email}`);

@@ -1526,8 +1526,8 @@
       "id": "aa3c",
       "firstName": "Andrew",
       "lastName": "Odinsson",
-      "address": "lviv",
-      "email": "vlad@gmail.com",
+      "address": "Norway",
+      "email": "andrewodinsson@gmail.com",
       "password": "1111",
       "reviews": [
         {
@@ -1542,8 +1542,8 @@
     },
     {
       "id": "7a8e",
-      "firstName": "владік",
-      "email": "vladiknemichevv@gmail.com",
+      "firstName": "Johny",
+      "email": "johnywillson@gmail.com",
       "address": "",
       "password": "Hsafju@4",
       "reviews": [
@@ -1559,9 +1559,9 @@
     },
     {
       "id": "796a",
-      "firstName": "Nikolay",
-      "lastName": "Kolbaskov",
-      "email": "nikolaykolbaskov@gmail.com",
+      "firstName": "Mike",
+      "lastName": "Tyson",
+      "email": "miketyson@gmail.com",
       "address": "",
       "password": "Hsafju@4",
       "reviews": [
@@ -1577,9 +1577,9 @@
     },
     {
       "id": "6b35",
-      "firstName": "Nikolay",
-      "lastName": "Kolbaskov",
-      "email": "nikolaykolbaskovx@gmail.com",
+      "firstName": "Nicholas",
+      "lastName": "The Saint",
+      "email": "nicholasthesaint@gmail.com",
       "address": "",
       "password": "Hsafju@4",
       "reviews": [
@@ -1595,9 +1595,8 @@
     },
     {
       "id": "21ab",
-      "firstName": "Lena",
-      "lastName": "Holovach",
-      "email": "mamutrahal@gmail.com",
+      "firstName": "Olena",
+      "email": "olenananana12@gmail.com",
       "address": "Lviv, Striy region, Velyki Didushychi",
       "password": "Hsafju@4",
       "reviews": [
@@ -1613,9 +1612,9 @@
     },
     {
       "id": "9cc7",
-      "firstName": "Rahal",
-      "lastName": "Mamut",
-      "email": "mamulrahat@gmail.com",
+      "firstName": "Henry",
+      "lastName": "Ford",
+      "email": "henryford@gmail.com",
       "address": "",
       "password": "Hsafju@4",
       "reviews": [
@@ -1631,9 +1630,9 @@
     },
     {
       "id": "882b",
-      "firstName": "Adolf",
-      "lastName": "Hitler",
-      "email": "adolfhitler@gmail.com",
+      "firstName": "Albert",
+      "lastName": "Einstein",
+      "email": "alberteinstein@gmail.com",
       "address": "",
       "password": "sfdad@5H",
       "reviews": [
@@ -1678,8 +1677,8 @@
     {
       "id": "721c",
       "firstName": "Joseph",
-      "lastName": "Stalin",
-      "email": "josephstalin@mail.ru",
+      "lastName": "Pinky",
+      "email": "josephpinky@mail.ru",
       "address": "",
       "password": "josePH@2",
       "reviews": [
@@ -1700,8 +1699,8 @@
     {
       "id": "d56f",
       "firstName": "Volodymyr",
-      "lastName": "Nemichev",
-      "email": "volodymyrnemichev@gmail.com",
+      "lastName": "The Great",
+      "email": "volodymyrthegreat@gmail.com",
       "address": "",
       "password": "volodiA2016^",
       "reviews": [
