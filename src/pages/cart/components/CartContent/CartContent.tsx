@@ -1,10 +1,10 @@
 import { Coupon } from "@/modules/Coupon";
 import classes from "./CartContent.module.scss";
 import { CartTotal } from "@/modules/CartTotal";
-import { IProduct } from "@/models/IProduct";
+import { ICart } from "@/models/ICart";
 
 interface Props {
-    products: IProduct[];
+    products: ICart[];
 }
 
 export default function CartContent({products}: Props) {

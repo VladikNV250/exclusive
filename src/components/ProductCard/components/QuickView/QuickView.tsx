@@ -48,7 +48,7 @@ export default function QuickView({isOpen, setIsOpen, product}: Props) {
                     </div>
                     <div className={classes["review-wrapper"]}>
                         <ProductReviewStar 
-                            id={product.id}
+                            product={product}
                             rating={product.rating}
                         />
                     </div>

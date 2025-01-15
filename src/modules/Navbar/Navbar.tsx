@@ -13,8 +13,8 @@ import { Link } from "react-router";
 
 export function Navbar() {
     const { t } = useTranslation();
-    const { productIDs: wishlistIDs } = useAppSelector(state => state.wishlistReducer);
-    const { productIDs: cartIDs } = useAppSelector(state => state.cartReducer);
+    const { products: wishlistProducts } = useAppSelector(state => state.wishlistReducer);
+    const { products: cartProducts } = useAppSelector(state => state.cartReducer);
     const { isAuthorized } = useAppSelector(state => state.userReducer);
     const links = [
         {name: t("home"), url: "/"},
@@ -53,9 +53,9 @@ export function Navbar() {
                             to={"/wishlist"} 
                             className={classes["icon-link__heart"]}
                         >
-                            {wishlistIDs.length > 0 &&
+                            {wishlistProducts.length > 0 &&
                             <div className={classes["counter"]}>
-                                {wishlistIDs.length}
+                                {wishlistProducts.length}
                             </div>}
                             <Heart width={32} height={32} />
                         </Link>
@@ -63,9 +63,9 @@ export function Navbar() {
                             to={"/cart"} 
                             className={classes["icon-link__cart"]}
                         >
-                            {cartIDs.length > 0 &&
+                            {cartProducts.length > 0 &&
                             <div className={classes["counter"]}>
-                                {cartIDs.length}
+                                {cartProducts.length}
                             </div>}
                             <Cart width={32} height={32} />
                         </Link>

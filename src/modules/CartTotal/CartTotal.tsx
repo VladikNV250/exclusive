@@ -3,11 +3,11 @@ import classes from "./CartTotal.module.scss";
 import CartHeading from "./components/CartHeading/CartHeading";
 import CartTotalItem from "./components/CartTotalItem/CartTotalItem";
 import ToCheckout from "./components/ToCheckout/ToCheckout";
-import { IProduct } from "@/models/IProduct";
 import { useEffect, useState } from "react";
+import { ICart } from "@/models/ICart";
 
 interface Props {
-    products: IProduct[];
+    products: ICart[];
 }
 
 export function CartTotal({products}: Props) {

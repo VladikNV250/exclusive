@@ -17,22 +17,21 @@ export const goodsAPI = {
                     name
                 }
             });
-            return response.data;
+            return response.data
         } catch (e) {
-            return e;
+            console.error(e);
         }
     },
-    fetchProductFiltered: async (filter: {[key: string]: string}) => {
+    fetchProduct: async (filter?: {[key: string]: string | number | boolean | null }) => {
         try {
-            console.log(filter);
-            const response = await axios.get<IProduct[]>(`http://192.168.1.3:3000/products`, {
+            const response = await axios.get<IProduct[]>(`http://192.168.1.3:3000/products?`, {
                 params: {
                     ...filter
                 }
             });
-            return response.data;
+            return response.data
         } catch (e) {
-            return e;
+            console.error(e);
         }
     },
     editProduct: async (product: IProduct) => {
@@ -40,7 +39,7 @@ export const goodsAPI = {
             const response = await axios.put<IProduct>(`http://192.168.1.3:3000/products/${product.id}`, product);
             return response.data;
         } catch (e) {
-            return e;
+            console.error(e);
         }
     },
 }

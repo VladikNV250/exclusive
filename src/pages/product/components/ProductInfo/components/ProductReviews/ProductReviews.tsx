@@ -5,11 +5,12 @@ import { IProduct } from "@/models/IProduct";
 
 interface Props {
     isInStock?: boolean,
-    id: IProduct["id"],
+    product: IProduct,
+    setProduct: (product: IProduct) => void;
     rating: IProduct["rating"],
 }
 
-export default function ProductReviews({isInStock = false, id, rating}: Props) {
+export default function ProductReviews({isInStock = false, product, setProduct, rating}: Props) {
     const { t } = useTranslation();
 
     const getCountReview = (): number => {
@@ -40,7 +41,8 @@ export default function ProductReviews({isInStock = false, id, rating}: Props) {
     return (
         <div className={classes["review-container"]}>
             <ReviewStar
-                id={id} 
+                product={product} 
+                setProduct={setProduct}
                 point={calculateAvaragePoint()} 
                 canSetReview={true}
             />

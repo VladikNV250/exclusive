@@ -1,15 +1,15 @@
 import ReviewStar from "@/components/ReviewStar/ReviewStar";
 import classes from "./ProductReviewStar.module.scss";
-import { CSSProperties, useEffect } from "react";
+import { CSSProperties } from "react";
 import { IProduct } from "@/models/IProduct";
 
 interface Props {
-    id: IProduct["id"],
+    product: IProduct,
     rating: IProduct["rating"],
     isLoading?: boolean,
 }
 
-export function ProductReviewStar({id, rating, isLoading = false}: Props) {
+export function ProductReviewStar({product, rating, isLoading = false}: Props) {
     const loadingMask: CSSProperties = {
         color: "transparent",
         background: "#aaa",
@@ -17,11 +17,6 @@ export function ProductReviewStar({id, rating, isLoading = false}: Props) {
         height: "20px",
         padding: "0",
     }
-
-
-    useEffect(() => {
-        
-    }, [rating])
 
     const getCountReview = (): number => {
         if (rating) {
@@ -54,7 +49,7 @@ export function ProductReviewStar({id, rating, isLoading = false}: Props) {
         <div className={classes["stars-container"]}>
             <ReviewStar 
                 point={calculateAvaragePoint()} 
-                id={id}
+                product={product}
             />
             <p className={classes["review-count"]}>
                 {getCountReview() <= 0 ? null : `(${getCountReview()})`}

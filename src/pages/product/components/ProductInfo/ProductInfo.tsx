@@ -16,15 +16,16 @@ import { IProduct } from "@/models/IProduct";
 import { useAppSelector } from "@/hooks/redux";
 import selectExchangeRate from "@/store/selectors/selectExchangeRate";
 import { useTranslation } from "react-i18next";
+import useQuantity from "../../hooks/useQuantity";
 
 interface Props {
     product: IProduct;
+    setProduct: (product: IProduct) => void
 }
 
-export function ProductInfo({product}: Props) {
+export function ProductInfo({product, setProduct}: Props) {
     const { i18n } = useTranslation();
-    const { 
-        id, 
+    const {  
         name, 
         description, 
         price, 
@@ -32,8 +33,9 @@ export function ProductInfo({product}: Props) {
         rating,
         availableColors,
         size,
-        quantity
+        quantity: maxQuantity,
     } = product;
+    const {quantity, increment, decrement} = useQuantity(1, maxQuantity);
     const currentExchangeRate = useAppSelector(state => selectExchangeRate(state, i18n.language))
 
     return (
@@ -41,7 +43,8 @@ export function ProductInfo({product}: Props) {
             <ProductTitle title={name} />
             <ProductReviews 
                 isInStock={isInStock}
-                id={id}    
+                product={product} 
+                setProduct={setProduct}   
                 rating={rating}
             />
             <ProductPrice price={price * currentExchangeRate} />
@@ -52,12 +55,16 @@ export function ProductInfo({product}: Props) {
             <ProductColors colors={availableColors} />
             <ProductSize sizes={size ?? []} />
             <div className={classes["buttons-container"]}>
-                <ProductQuantity 
-                    id={id}
-                    defaultQuantity={quantity ?? 1} 
+                <ProductQuantity  
+                    quantity={quantity}
+                    handleIncrement={increment}
+                    handleDecrement={decrement}
                 />
-                <BuyNow id={id} isInStock={isInStock} />
-                <AddToWishlist id={id} />
+                <BuyNow 
+                    product={product} 
+                    quantity={quantity}
+                />
+                <AddToWishlist product={product} />
             </div>
             <SpecialsList />
         </div>

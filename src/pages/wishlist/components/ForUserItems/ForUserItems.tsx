@@ -4,13 +4,13 @@ import ProductList from "@/components/ProductList/ProductList";
 import ButtonOutlined from "@/UI/buttons/ButtonOutlined/ButtonOutlined";
 import SectionHeader from "@/UI/headers/SectionHeader/SectionHeader";
 
-import selectFilteredProducts from "@/store/selectors/selectFilteredProducts";
-import { useAppSelector } from "@/hooks/redux";
 import { useTranslation } from "react-i18next";
+import { useProduct } from "@/hooks/useProduct";
+import CircleLoader from "@/UI/loaders/CircleLoader/CircleLoader";
 
 export default function ForUserItems() {
     const { t } = useTranslation();
-    const products = useAppSelector(state => selectFilteredProducts(state, "recommendation"))
+    const {products, isLoading} = useProduct("recommendation");
 
     return (
         <section className={classes["just-for-you--section"]}>
@@ -21,7 +21,9 @@ export default function ForUserItems() {
                         {t("see-all")}
                     </ButtonOutlined>
                 </header> 
-                <ProductList products={products} />
+                {isLoading ?
+                <CircleLoader loading={isLoading} /> :
+                <ProductList products={products} />}
             </div>
         </section>
     )
