@@ -7,7 +7,6 @@ import ButtonNavigation from "@/UI/buttons/ButtonNavigation/ButtonNavigation";
 import ProductList from "@/components/ProductList/ProductList";
 
 
-import selectFilteredProducts from "@/store/selectors/selectFilteredProducts";
 import { useAppSelector } from "@/hooks/redux";
 import useSlider from "../../hooks/useSlider";
 import useMode from "../../hooks/useMode";
@@ -15,7 +14,7 @@ import { useTranslation } from "react-i18next";
 
 export default function Explore() {
     const { t } = useTranslation();
-    const products = useAppSelector(state => selectFilteredProducts(state, "explore"))
+    const products = useAppSelector(state => state.productReducer.products)
     const {translate, slideLeft, slideRight, resetSlide} = useSlider(products.length, 1200);
     const {mode, changeMode} = useMode("all-products");
 

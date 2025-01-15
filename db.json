@@ -713,7 +713,480 @@
         "3.5": 2,
         "4.5": 4
       }
-    }
+    },
+    {
+      "id": "21",
+      "name": "Wireless Gaming Mouse X200",
+      "description": "High precision wireless gaming mouse with customizable DPI settings, ergonomic design, and RGB lighting.",
+      "price": 75,
+      "isInStock": true,
+      "availableColors": ["#ff0000", "#00ff00", "#0000ff"],
+      "size": ["M"],
+      "quantity": 50,
+      "images": {
+        "default": ["/images/goods/26.png", "/images/goods/27.png"],
+        "#ff0000": ["/images/goods/27.png"],
+        "#00ff00": ["/images/goods/59.png"]
+      },
+      "tags": ["gaming", "mouse", "electronics", "best-selling"],
+      "category": { "name": "computers", "href": "/computers" },
+      "rating": {
+        "1": 3,
+        "2": 4,
+        "3": 5,
+        "4": 6,
+        "5": 8
+      }
+    },
+    {
+      "id": "22",
+      "name": "Mechanical Keyboard K100",
+      "description": "Mechanical keyboard with customizable RGB lighting, hot-swappable switches, and ergonomic design.",
+      "price": 99,
+      "oldPrice": 120,
+      "isNew": true,
+      "isInStock": true,
+      "availableColors": ["#000000", "#ffffff"],
+      "size": ["M", "L"],
+      "quantity": 30,
+      "images": {
+        "default": ["/images/goods/28.png", "/images/goods/29.png"],
+        "#000000": ["/images/goods/28.png"],
+        "#ffffff": ["/images/goods/29.png"]
+      },
+      "tags": ["keyboard", "gaming", "electronics", "flash-sales"],
+      "category": { "name": "computers", "href": "/computers" },
+      "rating": {
+        "1": 2,
+        "2": 3,
+        "3": 4,
+        "4": 5,
+        "5": 7
+      }
+    },
+    {
+      "id": "23",
+      "name": "Wireless Earbuds Pro",
+      "description": "High-felity wireless earbuds with noise cancellation and long battery life.",
+      "price": 60,
+      "isInStock": true,
+      "availableColors": ["#ffffff", "#000000"],
+      "size": ["S", "M"],
+      "quantity": 100,
+      "images": {
+        "default": ["/images/goods/30.png", "/images/goods/31.png"],
+        "#ffffff": ["/images/goods/30.png"],
+        "#000000": ["/images/goods/31.png"]
+      },
+      "tags": ["earbuds", "audio", "electronics", "recommendation"],
+      "category": { "name": "audio", "href": "/audio" },
+      "rating": {
+        "1": 2,
+        "2": 3,
+        "3": 4,
+        "4": 5,
+        "5": 6
+      }
+    },
+    {
+      "id": "24",
+      "name": "Smartwatch Series 4",
+      "description": "Smartwatch with heart rate monitor, GPS, and customizable watch faces.",
+      "price": 150,
+      "oldPrice": 180,
+      "isInStock": true,
+      "availableColors": ["#black", "#silver"],
+      "size": ["S", "M"],
+      "quantity": 25,
+      "images": {
+        "default": ["/images/goods/32.png", "/images/goods/33.png"],
+        "#black": ["/images/goods/32.png"],
+        "#silver": ["/images/goods/33.png"]
+      },
+      "tags": ["smartwatch", "wearables", "electronics", "flash-sales"],
+      "category": { "name": "wearables", "href": "/wearables" },
+      "rating": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 5
+      }
+    },
+    {
+      "id": "25",
+      "name": "4K HD Monitor Ultra",
+      "description": "27-inch 4K UHD monitor with HDR, 144Hz refresh rate, and slim bezels.",
+      "price": 300,
+      "isInStock": true,
+      "availableColors": ["#black"],
+      "size": ["XL"],
+      "quantity": 15,
+      "images": {
+        "default": ["/images/goods/34.png", "/images/goods/35.png"],
+        "#black": ["/images/goods/34.png"]
+      },
+      "tags": ["monitor", "electronics", "best-selling"],
+      "category": { "name": "computers", "href": "/computers" },
+      "rating": {
+        "1": 3,
+        "2": 3,
+        "3": 3,
+        "4": 4,
+        "5": 4
+      }
+    },
+    {
+      "id": "26",
+      "name": "Portable Blender",
+      "description": "Compact and portable blender for smoothies and shakes with USB charging.",
+      "price": 35,
+      "isInStock": true,
+      "quantity": 20,
+      "images": {
+        "default": ["/images/goods/36.png", "/images/goods/37.png"]
+      },
+      "tags": ["blender", "kitchen", "home-lifestyle", "recommendation"],
+      "category": { "name": "home-lifestyle", "href": "/home&lifestyle" },
+      "rating": {
+        "1": 3,
+        "2": 2,
+        "3": 4,
+        "3.5": 3,
+        "4": 3,
+        "4.5": 2,
+        "5": 5
+      }
+    },
+    {
+      "id": "27",
+      "name": "Pet Care Kit",
+      "description": "All-in-one grooming and care kit for pets, including brushes, trimmers, and nail clippers.",
+      "price": 40,
+      "isInStock": true,
+      "quantity": 25,
+      "images": {
+        "default": ["/images/goods/38.png", "/images/goods/39.png"]
+      },
+      "tags": ["pets", "grooming", "groceries-pets", "recommendation"],
+      "category": { "name": "groceries-pets", "href": "/groceries&pets" },
+      "rating": {
+        "1": 2,
+        "2": 3,
+        "2.5": 1,
+        "3": 3,
+        "3.5": 2,
+        "4": 4,
+        "4.5": 3,
+        "5": 5
+      }
+    },
+    {
+      "id": "28",
+      "name": "Vitamin C Serum",
+      "description": "High-potency Vitamin C serum for brighter, healthier skin with anti-aging benefits.",
+      "price": 25,
+      "isInStock": true,
+      "quantity": 50,
+      "images": {
+        "default": ["/images/goods/40.png"]
+      },
+      "tags": ["beauty", "skin care", "health-beauty", "recommendation"],
+      "category": { "name": "health-beauty", "href": "/health&beauty" },
+      "rating": {
+        "1": 1,
+        "2": 2,
+        "2.5": 1,
+        "3": 3,
+        "3.5": 1,
+        "4": 4,
+        "4.5": 2,
+        "5": 6
+      }
+    },
+    {
+      "id": "29",
+      "name": "Baby Crib Mobile",
+      "description": "Colorful and soothing crib mobile to help your baby sleep soundly.",
+      "price": 45,
+      "isInStock": true,
+      "quantity": 15,
+      "images": {
+        "default": ["/images/goods/41.png", "/images/goods/42.png"]
+      },
+      "tags": ["baby", "crib", "babys-toys", "recommendation"],
+      "category": { "name": "babys-toys", "href": "/babys&toys" },
+      "rating": {
+        "1": 2,
+        "2": 3,
+        "2.5": 1,
+        "3": 4,
+        "3.5": 1,
+        "4": 3,
+        "4.5": 2,
+        "5": 5
+      }
+    },
+    {
+      "id": "30",
+      "name": "Men's Running Shoes",
+      "description": "Lightweight and comfortable running shoes for men with breathable material.",
+      "price": 80,
+      "oldPrice": 100,
+      "isInStock": true,
+      "size": ["M", "L", "XL"],
+      "quantity": 35,
+      "images": {
+        "default": ["/images/goods/43.png", "/images/goods/44.png"]
+      },
+      "tags": ["shoes", "sports", "mans-fashion", "flash-sales"],
+      "category": { "name": "mans-fashion", "href": "/man" },
+      "rating": {
+        "1": 1,
+        "2": 3,
+        "2.5": 1,
+        "3": 4,
+        "3.5": 1,
+        "4": 4,
+        "4.5": 2,
+        "5": 6
+      }
+    },
+    {
+      "id": "31",
+      "name": "Electric Toothbrush",
+      "description": "Rechargeable electric toothbrush with multiple cleaning modes.",
+      "price": 45,
+      "isInStock": true,
+      "quantity": 30,
+      "images": {
+        "default": ["/images/goods/46.png"]
+      },
+      "tags": ["health", "care", "electronics", "recommendation"],
+      "category": { "name": "health-beauty", "href": "/health&beauty" },
+      "rating": {
+        "1": 2,
+        "2": 3,
+        "3": 3,
+        "4": 4,
+        "5": 5
+      }
+    },
+    {
+      "id": "32",
+      "name": "Eco-Friendly Water Bottle",
+      "description": "Reusable water bottle made from eco-friendly material, with a leak-proof lid.",
+      "price": 10,
+      "isInStock": true,
+      "quantity": 60,
+      "images": {
+        "default": ["/images/goods/47.png"]
+      },
+      "category": { "name": "home-lifestyle", "href": "/home&lifestyle" },
+      "rating": {
+        "1": 4,
+        "2": 2,
+        "3": 3,
+        "4": 3,
+        "5": 5
+      },
+      "tags": ["bottle", "kitchen", "home-lifestyle", "recommendation"]
+    },
+    {
+      "id": "33",
+      "name": "Bluetooth Speaker Mini",
+      "description": "Compact Bluetooth speaker with powerful sound and long battery life.",
+      "price": 50,
+      "isInStock": true,
+      "availableColors": ["#000000"],
+      "quantity": 45,
+      "images": {
+        "default": ["/images/goods/48.png"]
+      },
+      "tags": ["audio", "portable", "electronics", "recommendation"],
+      "category": { "name": "electronics", "href": "/electronics" },
+      "rating": {
+        "1": 2,
+        "2": 3,
+        "3": 4,
+        "4": 4.5,
+        "5": 6
+      }
+    },
+    {
+      "id": "34",
+      "name": "Women's Handbag",
+      "description": "Stylish handbag made from high-quality material, perfect for daily use.",
+      "price": 70,
+      "isNew": true,
+      "isInStock": true,
+      "quantity": 40,
+      "images": {
+        "default": ["/images/goods/49.png"]
+      },
+      "tags": ["fashion", "accessories", "womens-fashion", "best-selling"],
+      "category": { "name": "womens-fashion", "href": "/woman" },
+      "rating": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 7
+      }
+    },
+    {
+      "id": "35",
+      "name": "Yoga Mat",
+      "description": "Durable and non-slip yoga mat for home workouts and yoga sessions.",
+      "price": 25,
+      "isInStock": true,
+      "quantity": 20,
+      "images": {
+        "default": ["/images/goods/50.png", "/images/goods/51.png"]
+      },
+      "tags": ["fitness", "yoga", "sports-outdoor", "recommendation"],
+      "category": { "name": "sports-outdoor", "href": "/sports&outdoor" },
+      "rating": {
+        "1": 1,
+        "1.5": 1,
+        "2": 2,
+        "2.5": 2,
+        "3": 3,
+        "3.5": 3,
+        "4": 3,
+        "4.5": 4,
+        "5": 6
+      }
+    },
+    {
+      "id": "36",
+      "name": "Smart Lamp",
+      "description": "Smart lamp with color-changing LED and Wi-Fi connectivity for remote control.",
+      "price": 55,
+      "isInStock": true,
+      "quantity": 25,
+      "images": {
+        "default": ["/images/goods/52.png", "/images/goods/53.png"]
+      },
+      "tags": ["lighting", "smart home", "electronics", "recommendation"],
+      "category": { "name": "electronics", "href": "/electronics" },
+      "rating": {
+        "0.5": 1,
+        "1": 2,
+        "1.5": 1,
+        "2": 2,
+        "2.5": 1,
+        "3": 3,
+        "3.5": 2,
+        "4": 4,
+        "4.5": 3,
+        "5": 6
+      }
+    },
+    {
+      "id": "37",
+      "name": "Running Tights",
+      "description": "High-performance running tights for men, made from moisture-wicking fabric.",
+      "price": 40,
+      "oldPrice": 50,
+      "isNew": true,
+      "isInStock": true,
+      "size": ["M", "L", "XL"],
+      "quantity": 30,
+      "images": {
+        "default": ["/images/goods/54.png"]
+      },
+      "tags": ["clothing", "sports", "mans-fashion", "flash-sales"],
+      "category": { "name": "mans-fashion", "href": "/man" },
+      "rating": {
+        "0.5": 0,
+        "1": 1,
+        "1.5": 1.5,
+        "2": 2,
+        "2.5": 3,
+        "3": 3.5,
+        "3.5": 4,
+        "4": 4.5,
+        "4.5": 4,
+        "5": 5
+      }
+    },
+    {
+      "id": "38",
+      "name": "BBQ Grill Set",
+      "description": "Complete BBQ grill set with all the tools needed for a perfect grilling experience.",
+      "price": 75,
+      "isInStock": true,
+      "quantity": 20,
+      "images": {
+        "default": ["/images/goods/55.png"]
+      },
+      "tags": ["BBQ", "grilling", "home-lifestyle", "recommendation"],
+      "category": { "name": "home-lifestyle", "href": "/home&lifestyle" },
+      "rating": {
+        "0.5": 0,
+        "1": 2,
+        "1.5": 1,
+        "2": 4,
+        "2.5": 1,
+        "3": 3,
+        "3.5": 2,
+        "4": 4,
+        "4.5": 3,
+        "5": 6
+      }
+    },
+    {
+      "id": "39",
+      "name": "Organic Baby Lotion",
+      "description": "Gentle and organic baby lotion to keep your baby's skin soft and moisturized.",
+      "price": 20,
+      "isInStock": true,
+      "quantity": 50,
+      "images": {
+        "default": ["/images/goods/56.png"]
+      },
+      "tags": ["baby care", "organic", "babys-toys", "recommendation"],
+      "category": { "name": "babys-toys", "href": "/babys&toys" },
+      "rating": {
+        "0.5": 0,
+        "1": 2,
+        "1.5": 2,
+        "2": 3,
+        "2.5": 2,
+        "3": 5,
+        "3.5": 3,
+        "4": 4,
+        "4.5": 5,
+        "5": 7
+      }
+    },
+    {
+      "id": "40",
+      "name": "Fitness Tracker",
+      "description": "Advanced fitness tracker with heart rate monitor, GPS, and various workout modes.",
+      "price": 100,
+      "isInStock": true,
+      "availableColors": ["#000000", "#ffffff"],
+      "quantity": 40,
+      "images": {
+        "default": ["/images/goods/57.png", "/images/goods/58.png"]
+      },
+      "tags": ["fitness", "tracker", "electronics", "recommendation"],
+      "category": { "name": "electronics", "href": "/electronics" },
+      "rating": {
+        "0.5": 0,
+        "1": 2,
+        "1.5": 1,
+        "2": 3.5,
+        "2.5": 2.5,
+        "3": 4,
+        "3.5": 3.5,
+        "4": 5,
+        "4.5": 4,
+        "5": 6
+      }
+    }                
   ],
   "users": [
     {

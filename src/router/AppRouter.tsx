@@ -18,18 +18,18 @@ const AppRouter = () => {
     return (
         <Suspense fallback={<PageLoader />}>
             <Routes>
-                <Route index element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/wishlist" element={<Wishlist />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/sign-up" element={<SignUp />} />
-                <Route path="/log-in" element={<LogIn />} />
-                <Route path="/account" element={<Account />} />
-                <Route path="/checkout" element={<CheckOut />} />
-                <Route path="/product/:productID" element={<Product />} />
-                <Route path="/search/:query" element={<Search />} />
-                <Route path="*" element={<NotFound />} />
+                <Route index element={<Suspense fallback={<PageLoader />}><Home /></Suspense>} />
+                <Route path="/about" element={<Suspense fallback={<PageLoader />}><About /></Suspense>} />
+                <Route path="/contact" element={<Suspense fallback={<PageLoader />}><Contact /></Suspense>} />
+                <Route path="/wishlist" element={<Suspense fallback={<PageLoader />}><Wishlist /></Suspense>} />
+                <Route path="/cart" element={<Suspense fallback={<PageLoader />}><Cart /></Suspense>} />
+                <Route path="/sign-up" element={<Suspense fallback={<PageLoader />}><SignUp /></Suspense>} />
+                <Route path="/log-in" element={<Suspense fallback={<PageLoader />}><LogIn /></Suspense>} />
+                <Route path="/account" element={<Suspense fallback={<PageLoader />}><Account /></Suspense>} />
+                <Route path="/checkout" element={<Suspense fallback={<PageLoader />}><CheckOut /></Suspense>} />
+                <Route path="/product/:productID" element={<Suspense fallback={<PageLoader />}><Product /></Suspense>} />
+                <Route path="/search/:query" element={<Suspense fallback={<PageLoader />}><Search /></Suspense>} />
+                <Route path="*" element={<Suspense fallback={<PageLoader />}><NotFound /></Suspense>} />
             </Routes>
         </Suspense>
     )
