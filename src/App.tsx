@@ -4,17 +4,22 @@ import AppRouter from "./router/AppRouter"
 import "./global.scss";
 import { useEffect } from "react";
 import { useAppDispatch } from "./hooks/redux";
-import { fetchAllProducts, fetchUserById } from "./store/reducers/ActionCreators";
+import { fetchUserById } from "./store/reducers/ActionCreators";
+import { wishlistSlice } from "./store/reducers/WishlistSlice";
+import { cartSlice } from "./store/reducers/CartSlice";
 
 function App() {
     const dispatch = useAppDispatch();
+    const {getWishlistFromLocalStorage} = wishlistSlice.actions;
+    const {getCartFromLocalStorage} = cartSlice.actions;
 
     useEffect(() => {
-        dispatch(fetchAllProducts());
-
         const id = localStorage.getItem("user");
         if (id) dispatch(fetchUserById(id));
-    }, [dispatch])
+
+        dispatch(getWishlistFromLocalStorage());
+        dispatch(getCartFromLocalStorage());
+    }, [dispatch, getWishlistFromLocalStorage, getCartFromLocalStorage])
 
     return (
         <>

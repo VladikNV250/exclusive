@@ -22,18 +22,20 @@ import { Link } from "react-router";
 import CircleLoader from "@/UI/loaders/CircleLoader/CircleLoader";
 
 interface Props {
-    id              : IProduct["id"],
-    images          : IProduct["images"],
-    name            : IProduct["name"],
-    price           : IProduct["price"],
-    oldPrice        : IProduct["oldPrice"],
-    isInStock       : IProduct["isInStock"],
-    isNew           : IProduct["isNew"],
-    rating          : IProduct["rating"],
-    availableColors : IProduct["availableColors"],
+    product: IProduct,
 }
 
-export function ProductCard({id, images, name, price, oldPrice, isInStock, isNew, rating, availableColors}: Props) {
+export function ProductCard({product}: Props) {
+    const {
+        id, 
+        images, 
+        name, 
+        price, 
+        oldPrice,  
+        isNew, 
+        rating, 
+        availableColors
+    } = product
     const { i18n } = useTranslation();
     const [isLoading, setIsLoading] = useState(true);
     const [selectedColor, setSelectedColor] = useState("default");
@@ -69,10 +71,10 @@ export function ProductCard({id, images, name, price, oldPrice, isInStock, isNew
                     </ProductTag>}
                 </div>
                 <div className={classes["item-content__right"]}>
-                    <ButtonWishlist id={id} />
-                    <ButtonQuickView id={id} />
+                    <ButtonWishlist product={product} />
+                    <ButtonQuickView product={product} />
                 </div>
-                <AddToCart id={id} isInStock={isInStock} />
+                <AddToCart product={product} />
             </div>
             <div className={classes["product-body"]}>
                 <Link to={`/product/${id}`}>
@@ -89,7 +91,7 @@ export function ProductCard({id, images, name, price, oldPrice, isInStock, isNew
                         {formatPrice(oldPrice * currentExchangeRate)}
                     </Heading>}
                     <ProductReviewStar
-                        id={id}
+                        product={product}
                         isLoading={isLoading}
                         rating={rating}
                     />

@@ -6,23 +6,29 @@ import { useState } from "react";
 import CartMessage from "../CartMessage/CartMessage";
 import { IProduct } from "@/models/IProduct";
 import { Link } from "react-router";
+import { ICart } from "@/models/ICart";
 
 interface Props {
-    id: IProduct["id"],
-    isInStock: IProduct["isInStock"],
+    product: IProduct,
 }
 
-export default function AddToCart({id, isInStock = false}: Props) {
+export default function AddToCart({product}: Props) {
     const { t } = useTranslation();
-    
     const [isOpen, setIsOpen] = useState(false);
-    const {productIDs} = useAppSelector(state => state.cartReducer);
-    
+    const {products} = useAppSelector(state => state.cartReducer);
     const dispatch = useAppDispatch();
     const {addToCart} = cartSlice.actions;
 
     const handleClick = () => {
-        dispatch(addToCart(id));
+        const newCartProduct: ICart = {
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            images: product.images,
+            quantity: 1,
+        }
+        
+        dispatch(addToCart(newCartProduct));
         setIsOpen(true);
         setTimeout(() => {
             setIsOpen(false);
@@ -32,7 +38,7 @@ export default function AddToCart({id, isInStock = false}: Props) {
     return (
         <>
             <CartMessage isOpen={isOpen} />
-            {productIDs.includes(id) ?
+            {products.find(cartProduct => cartProduct.id === product.id) ?
             <button className={classes["item-button"]}>
                 <Link to="/cart" className={classes["item-link"]}>
                     {t("to-cart")}
@@ -42,10 +48,10 @@ export default function AddToCart({id, isInStock = false}: Props) {
             <button 
                 onClick={handleClick} 
                 className={classes["item-button"]}
-                disabled={!isInStock}
+                disabled={!product.isInStock}
             >
-                {isInStock && t("add-to-cart")}
-                {!isInStock && t("out-of-stock")}
+                {product.isInStock && t("add-to-cart")}
+                {!product.isInStock && t("out-of-stock")}
             </button>}
         </>
         

@@ -5,12 +5,12 @@ import ProductList from "@/components/ProductList";
 import Heading from "@/UI/headers/Heading/Heading";
 
 import { routeSlice } from "@/store/reducers/RouteSlice";
-import { fetchProductByName } from "@/store/reducers/ActionCreators";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useAppDispatch } from "@/hooks/redux";
 import { IProduct } from "@/models/IProduct";
+import { goodsAPI } from "@/api/GoodsAPI";
 
 export default function Search() {
     const { t } = useTranslation();
@@ -22,7 +22,7 @@ export default function Search() {
     useEffect(() => {
         (async () => {
             try {
-                const searchedProducts = await dispatch(fetchProductByName(query)).unwrap();
+                const searchedProducts = await goodsAPI.fetchProductByName(query);
                 if (searchedProducts) setProducts(searchedProducts);
             } catch (e) {
                 console.error(e);

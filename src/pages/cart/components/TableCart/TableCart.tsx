@@ -4,10 +4,10 @@ import TableHeadCart from "@/pages/cart/components/TableCart/components/TableHea
 import ToShop from "./components/ToShop/ToShop";
 import CleanCartButton from "./components/CleanCartButton/CleanCartButton";
 import { useTranslation } from "react-i18next";
-import { IProduct } from "@/models/IProduct";
+import { ICart } from "@/models/ICart";
 
 interface Props {
-    products: IProduct[];
+    products: ICart[];
 }
 
 export function TableCart({products}: Props) {

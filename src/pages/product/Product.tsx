@@ -6,17 +6,27 @@ import ProductGallery from "./components/ProductGallery/ProductGallery";
 import { ProductInfo } from "./components/ProductInfo";
 import RelatedProducts from "./components/RelatedProducts/RelatedProducts";
 
-import { useAppDispatch, useAppSelector } from "@/hooks/redux";
+import { useAppDispatch } from "@/hooks/redux";
 import { routeSlice } from "@/store/reducers/RouteSlice";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router";
+import { useEffect, useState } from "react";
+import { goodsAPI } from "@/api/GoodsAPI";
+import { IProduct } from "@/models/IProduct";
 
 
 export default function Product() {
     const { t } = useTranslation();
     const { productID } = useParams();
-    const product = useAppSelector(state => 
-        state.productReducer.products.find(product => product.id === productID));
+    const [product, setProduct] = useState<IProduct>();
+
+    useEffect(() => {
+        (async () => {
+            const response = await goodsAPI.fetchProduct({id: productID ?? ""});
+            if (response)
+                setProduct(response[0]); 
+        })()
+    }, [productID])
 
     const dispatch = useAppDispatch();
     const { addRoute } = routeSlice.actions;
@@ -32,9 +42,9 @@ export default function Product() {
             <section className={classes["product-section"]}>
                 <div className={classes["product-container"]}>
                     <ProductGallery images={product.images.default} />
-                    <ProductInfo product={product} />
+                    <ProductInfo product={product} setProduct={setProduct} />
                 </div>
-                <RelatedProducts tags={product.tags || []} id={product.id} />
+                <RelatedProducts tag={product.tags?.[0] ?? ""} />
             </section>
             :
             <div>Can't load a product</div>}
