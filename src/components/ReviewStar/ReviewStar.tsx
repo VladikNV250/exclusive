@@ -2,23 +2,25 @@ import { useEffect, useRef, useState } from "react";
 import classes from "./ReviewStar.module.scss";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import { IProduct, NumericKeys } from "@/models/IProduct";
-import { editProduct, editUser } from "@/store/reducers/ActionCreators";
-import selectByIdProducts from "@/store/selectors/selectByIdProducts";
+import { editUser } from "@/store/reducers/ActionCreators";
 import { IUser } from "@/models/IUser";
 import { produce } from "immer";
+import { goodsAPI } from "@/api/GoodsAPI";
+import CommonLoader from "@/UI/loaders/CommonLoader/CommonLoader";
 
 interface Props {
-    id: IProduct["id"],
+    product: IProduct,
+    setProduct?: (product: IProduct) => void,
     point: number,
     canSetReview?: boolean,
 }
 
-export default function ReviewStar({id, point, canSetReview = false}: Props) {
+export default function ReviewStar({product, setProduct, point, canSetReview = false}: Props) {
     const starsRef = useRef<HTMLDivElement>(null);
     const dispatch = useAppDispatch();
-    const product = useAppSelector(state => selectByIdProducts(state, id));
     const {user} = useAppSelector(state => state.userReducer);
     const [canReview, setCanReview] = useState(canSetReview);
+    const [isLoading, setIsLoading] = useState(false);
 
     const fullInStar = (pointOfStar: number) => {
         if (point) {
@@ -56,10 +58,11 @@ export default function ReviewStar({id, point, canSetReview = false}: Props) {
         }
     }
 
-    const setStars = (score: NumericKeys) => {
+    const setStars = async (score: NumericKeys) => {
+        console.log(user, canReview, product);
         if (user && canReview && product) {
             const newReview = {
-                product_id: id,
+                product_id: product.id,
                 score,
             }
             const newUser: IUser = {
@@ -83,21 +86,30 @@ export default function ReviewStar({id, point, canSetReview = false}: Props) {
                         draft.category = {name: "", href: ""};
                     }
                 }
-
             });
 
+
             dispatch(editUser(newUser));
-            dispatch(editProduct(newProduct));
+            try {
+                setIsLoading(true);
+                await goodsAPI.editProduct(newProduct);
+                if (setProduct) setProduct(newProduct);
+            } catch (e) {
+                console.error(e)
+            } finally {
+                setIsLoading(false);
+            }
         }
     }
 
     useEffect(() => {
-        const hasAlreadyScore = user?.reviews.find(review => review.product_id === id);
+        const hasAlreadyScore = user?.reviews.find(review => review.product_id === product.id);
         if (hasAlreadyScore) setCanReview(false);
-    }, [user, id])
+    }, [user, product])
 
     return (
         <div className={classes["stars"]} ref={starsRef}>
+            <CommonLoader loading={isLoading} />
             {Array.from({length: 5}).map((_, index) => (
                 <svg 
                     data-value={index + 1} 

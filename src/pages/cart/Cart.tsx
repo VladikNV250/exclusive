@@ -7,11 +7,7 @@ import { useTranslation } from "react-i18next";
 
 export default function Cart() {
     const { t } = useTranslation();
-    const {productIDs} = useAppSelector(state => state.cartReducer);
-    const {products} = useAppSelector(state => state.productReducer);
-    const cartProducts = productIDs
-        .map(id => products.find(product => product.id === id))
-        .filter(product => product !== undefined);
+    const {products} = useAppSelector(state => state.cartReducer);
 
     const dispatch = useAppDispatch();
     const {addRoute} = routeSlice.actions;
@@ -22,8 +18,8 @@ export default function Cart() {
     return (
         <main>
             <Roadmap />
-            <TableCart products={cartProducts} />
-            <CartContent products={cartProducts} />
+            <TableCart products={products} />
+            <CartContent products={products} />
         </main>
     )
 }

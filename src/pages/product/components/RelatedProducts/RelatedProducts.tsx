@@ -1,34 +1,24 @@
 import classes from "./RelatedProducts.module.scss";
 import { useTranslation } from "react-i18next";
-import { useAppSelector } from "@/hooks/redux";
 import SectionHeader from "@/UI/headers/SectionHeader/SectionHeader";
 import ProductList from "@/components/ProductList";
+import { useProduct } from "@/hooks/useProduct";
+import CircleLoader from "@/UI/loaders/CircleLoader/CircleLoader";
 
 interface Props {
-    tags: string[],
-    id: string,
+    tag: string;
 }
 
-export default function RelatedProducts({tags, id}: Props) {
+export default function RelatedProducts({ tag }: Props) {
     const { t } = useTranslation();
-    const {products} = useAppSelector(state => state.productReducer);
-
-    const uniqueIDs = new Set();
-    const relatedProducts = tags.map(tag => products.filter(product => { // filter products with the same id
-        if (id === product.id) return false;
-        if (product?.tags?.includes(tag)) {
-            if (!uniqueIDs.has(product.id)) {
-                uniqueIDs.add(product.id);
-                return true;
-            } 
-        } 
-        return false;
-    })).flat();
+    const { products, isLoading } = useProduct(tag);
 
     return (
         <div className={classes["product-list-container"]}>
             <SectionHeader subtitle={t("related-item")} />
-            <ProductList products={relatedProducts} />
+            {isLoading ?
+                <CircleLoader loading={isLoading} /> :
+                <ProductList products={products} />}
         </div>
-    )   
+    )
 }

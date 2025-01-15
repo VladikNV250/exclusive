@@ -1,16 +1,15 @@
 import InputQuantity from "@/UI/inputs/InputQuantity/InputQuantity";
 import classes from "./TableRowCart.module.scss";
-import { IProduct } from "@/models/IProduct";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
-import { productSlice } from "@/store/reducers/ProductSlice";
 import { useTranslation } from "react-i18next";
 import selectExchangeRate from "@/store/selectors/selectExchangeRate";
 import formatPrice from "@/helpers/formatPrice";
 import { cartSlice } from "@/store/reducers/CartSlice";
 import { Link } from "react-router";
+import { ICart } from "@/models/ICart";
 
 interface Props {
-    product: IProduct;
+    product: ICart;
 }
 
 export default function TableRowCart({product}: Props) {
@@ -18,15 +17,14 @@ export default function TableRowCart({product}: Props) {
     const { id, name, price, images, quantity } = product;
     const currentExchangeRate = useAppSelector(state => selectExchangeRate(state, i18n.language));
     const dispatch = useAppDispatch();
-    const {updateQuantity} = productSlice.actions;
-    const {removeFromCart} = cartSlice.actions;
+    const {removeFromCart, updateQuantity} = cartSlice.actions;
 
     const handleRemove = () => {
         dispatch(removeFromCart(product.id))
     }
 
     const changeQuantity = (quantity: number) => {
-        dispatch(updateQuantity({id: product.id, quantity}));
+        dispatch(updateQuantity({id, quantity}))
     }
 
     return (

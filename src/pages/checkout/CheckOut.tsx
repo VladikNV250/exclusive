@@ -18,9 +18,7 @@ import { useEffect, useState } from "react";
 
 export default function CheckOut() {
     const { t, i18n } = useTranslation();
-    const {productIDs} = useAppSelector(state => state.cartReducer);
-    const {products} = useAppSelector(state => state.productReducer);
-    const cartProducts = productIDs.map(id => products.find(product => product.id === id)).filter(product => product !== undefined);
+    const {products} = useAppSelector(state => state.cartReducer);
     const currentExchangeRate = useAppSelector(state => selectExchangeRate(state, i18n.language))
     const [sum, setSum] = useState(0);
     const deliveryCost = 10;
@@ -33,12 +31,12 @@ export default function CheckOut() {
 
     useEffect(() => {
         let total = 0;
-        cartProducts.map((product) => {
+        products.map((product) => {
             if (product.quantity) total += product.price * product.quantity;
             else total += product.price * 1;
         })  
         setSum(total);
-    }, [cartProducts])
+    }, [products])
 
     return (
         <main className={classes["checkout"]}>
@@ -53,7 +51,7 @@ export default function CheckOut() {
                     </section>
                     <section className={classes["checkout-content__two"]}>
                         <div className={classes["product-item-container"]}>
-                            {cartProducts.map((product) => 
+                            {products.map((product) => 
                                 <CheckoutProductItem 
                                     image={product.images.default[0]}
                                     name={product.name}

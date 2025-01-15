@@ -6,21 +6,21 @@ import { IProduct } from "@/models/IProduct";
 import { wishlistSlice } from "@/store/reducers/WishlistSlice";
 
 interface Props {
-    id: IProduct["id"];
+    product: IProduct;
 }
 
-export default function AddToWishlist({id}: Props) {
-    const {productIDs} = useAppSelector(state => state.wishlistReducer);
+export default function AddToWishlist({product}: Props) {
+    const {products} = useAppSelector(state => state.wishlistReducer);
     const {addToWishlist, removeFromWishlist} = wishlistSlice.actions;
     const dispatch = useAppDispatch();
     
-    const inWishlist = productIDs.includes(id);
+    const inWishlist = products.find(wishProduct => wishProduct.id === product.id);
 
     function handleClick() {
         if (inWishlist) 
-            dispatch(removeFromWishlist(id));
+            dispatch(removeFromWishlist(product.id));
         else 
-            dispatch(addToWishlist(id));
+            dispatch(addToWishlist(product));
     }
 
     return (

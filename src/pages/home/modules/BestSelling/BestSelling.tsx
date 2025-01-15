@@ -4,15 +4,15 @@ import SectionHeader from "@/UI/headers/SectionHeader/SectionHeader";
 import ButtonLarge from "@/UI/buttons/ButtonLarge/ButtonLarge";
 import ProductList from "@/components/ProductList/ProductList";
 
-import selectFilteredProducts from "@/store/selectors/selectFilteredProducts";
-import { useAppSelector } from "@/hooks/redux";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
+import { useProduct } from "@/hooks/useProduct";
+import CircleLoader from "@/UI/loaders/CircleLoader/CircleLoader";
 
 
 export default function BestSelling() {
     const { t } = useTranslation();
-    const products = useAppSelector(state => selectFilteredProducts(state, "best-selling"));
+    const { products, isLoading } = useProduct("best-selling");
 
     return (
         <section className={classes["best-selling"]}>
@@ -25,7 +25,9 @@ export default function BestSelling() {
                         </ButtonLarge>
                     </Link>
                 </div>
-                <ProductList products={products}/>
+                {isLoading ?
+                    <CircleLoader loading={isLoading} /> :
+                    <ProductList products={products} />}
             </div>
         </section>
     )
